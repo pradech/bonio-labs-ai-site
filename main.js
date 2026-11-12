@@ -176,6 +176,16 @@
     });
   });
 
+  // โจทย์ที่ผู้ใช้กด "โจทย์นี้ตรงกับเรา" จากการ์ดตัวอย่างโจทย์ จะแนบไปกับ lead
+  var pendingTopic = "";
+  Array.prototype.forEach.call(document.querySelectorAll("[data-topic]"), function (link) {
+    link.addEventListener("click", function () {
+      pendingTopic = link.getAttribute("data-topic");
+      var target = document.getElementById("q-email-contact");
+      if (target) window.setTimeout(function () { target.focus({ preventScroll: true }); }, 0);
+    });
+  });
+
   function el(tag, className, text) {
     var node = document.createElement(tag);
     if (className) node.className = className;
@@ -305,6 +315,7 @@
         consent: t.consentValue
       };
       if (pendingService) fields.service = pendingService;
+      if (pendingTopic) fields.topic = pendingTopic;
       var message = form.querySelector("textarea");
       if (message && message.value.trim()) fields.message = message.value.trim();
       var extra = window.BonioLabs.extraFields[source];
