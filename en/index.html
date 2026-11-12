@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=15">
+  <link rel="stylesheet" href="../styles.css?v=16">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -130,6 +130,8 @@
 
   <main id="top">
     <section class="hero">
+      <img class="hero-photo" src="../assets/photo-glass-room.jpg" alt="" width="1600" height="1067" fetchpriority="high">
+      <canvas class="hero-rain" aria-hidden="true"></canvas>
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="hero-kicker">AI Transformation Consultant</p>
@@ -297,6 +299,9 @@
     <section id="process" class="section gray light">
       <div class="wrap">
         <h2>10 working days, <span class="blue">from question to decision</span></h2>
+        <figure class="photo photo-wide">
+          <img src="../assets/photo-boardroom.jpg" alt="A team meeting around a long table in a conference room with large windows" width="1600" height="1068" loading="lazy" decoding="async">
+        </figure>
         <div class="timeline" role="img" aria-label="Timeline of 10 working days: step 1 takes 1 day, step 2 takes 3 days, step 3 takes 4 days, step 4 takes 2 days">
           <div class="tl-bar">
             <span class="tl-seg" style="--span: 1">01</span>
@@ -767,6 +772,9 @@
             <li>The first discussion is free.</li>
             <li>If this service is not a fit for your work, we will tell you plainly.</li>
           </ul>
+          <figure class="photo photo-contact">
+            <img src="../assets/photo-hands.jpg" alt="A meeting attendee gesturing while explaining work beside a laptop and notebook" width="1600" height="1067" loading="lazy" decoding="async">
+          </figure>
         </div>
 
         <div class="form-card light">
@@ -810,14 +818,15 @@
         <a href="#contact">Contact us</a>
         <a href="#privacy">Privacy policy</a>
       </nav>
-      <p class="copyright">&copy; 2026 Bonio Labs. All rights reserved.</p>
+      <p class="copyright">&copy; 2026 Bonio Labs. All rights reserved. <span class="credit">Photos from Unsplash</span></p>
     </div>
   </footer>
 
-  <script src="../config.js?v=15"></script>
-  <script src="../main.js?v=15"></script>
-  <script src="../calc.js?v=15"></script>
-  <script src="../viz.js?v=15"></script>
-  <script src="../prompt-tool.js?v=15"></script>
+  <script src="../config.js?v=16"></script>
+  <script src="../main.js?v=16"></script>
+  <script src="../calc.js?v=16"></script>
+  <script src="../viz.js?v=16"></script>
+  <script src="../prompt-tool.js?v=16"></script>
+  <script src="../rain.js?v=16"></script>
 </body>
 </html>
