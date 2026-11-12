@@ -136,13 +136,18 @@
           <h1>ตอบผู้บริหารได้ใน 10 วันทำการ ว่า AI คุ้มกับงานไหน</h1>
           <p class="lead">Bonio Labs เป็นที่ปรึกษา AI Transformation ช่วยทีมธุรกิจเลือกงานที่ควรใช้ AI พิสูจน์ความคุ้มค่าเป็นตัวเลข และวางแผนโครงการนำร่อง (pilot) 90 วัน ที่ผู้บริหารตัดสินใจได้ทันที</p>
           <div class="hero-actions">
-            <a class="btn btn-white" href="#contact">
-              นัดคุย 30 นาที
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12.5 9l3 3-3 3"/></svg>
-            </a>
-            <a class="hero-link" href="#sample">ดูตัวอย่างรายงาน</a>
+            <form class="quick-lead" data-source="hero" novalidate>
+              <label class="sr-only" for="q-email-hero">อีเมลที่ทำงาน</label>
+              <div class="quick-row">
+                <input id="q-email-hero" name="email" type="email" autocomplete="email" inputmode="email" placeholder="อีเมลที่ทำงานของคุณ" required>
+                <button class="btn btn-dark" type="submit">นัดคุย 30 นาที</button>
+              </div>
+              <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="quick-error" role="alert" hidden></p>
+              <p class="quick-note">กรอกแค่อีเมล เราจะติดต่อกลับเพื่อนัดคุย 30 นาที ไม่มีค่าใช้จ่าย การส่งถือว่ายินยอมให้ติดต่อกลับตาม <a href="#privacy">นโยบายความเป็นส่วนตัว</a></p>
+            </form>
           </div>
-          <p class="hero-note">ไม่มีค่าใช้จ่ายในการคุยครั้งแรก</p>
+          <p class="hero-note"><a class="hero-link" href="#sample">ดูตัวอย่างรายงาน</a></p>
         </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="mini-card mini-list">
@@ -512,44 +517,17 @@
               <div><dt>ค่าเครื่องมือ AI ต่อปี</dt><dd id="calc-tools">360,000 บาท</dd></div>
             </dl>
 
-            <button class="btn btn-white btn-block" type="button" id="calc-open">ส่งผลนี้ให้ Bonio Labs ช่วยตรวจ</button>
-
-            <form class="calc-lead" id="calc-lead-form" novalidate hidden>
-              <p class="calc-lead-intro">เราจะตรวจสมมติฐานของคุณแล้วตอบกลับทางอีเมล</p>
-              <div class="field">
-                <label for="calc-name">ชื่อ-นามสกุล <span class="req" aria-hidden="true">*</span></label>
-                <input id="calc-name" name="name" type="text" autocomplete="name" required>
-                <p class="field-error" id="calc-name-error" hidden></p>
+            <p class="calc-lead-intro">อยากให้ทีมช่วยตรวจตัวเลขนี้ กรอกแค่อีเมล</p>
+            <form class="quick-lead" data-source="calculator" novalidate>
+              <label class="sr-only" for="q-email-calculator">อีเมลที่ทำงาน</label>
+              <div class="quick-row">
+                <input id="q-email-calculator" name="email" type="email" autocomplete="email" inputmode="email" placeholder="อีเมลที่ทำงานของคุณ" required>
+                <button class="btn btn-dark" type="submit">ส่งผลคำนวณ</button>
               </div>
-              <div class="field">
-                <label for="calc-email">อีเมลที่ทำงาน <span class="req" aria-hidden="true">*</span></label>
-                <input id="calc-email" name="email" type="email" autocomplete="email" inputmode="email" required>
-                <p class="field-error" id="calc-email-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="calc-company">บริษัท <span class="req" aria-hidden="true">*</span></label>
-                <input id="calc-company" name="company" type="text" autocomplete="organization" required>
-                <p class="field-error" id="calc-company-error" hidden></p>
-              </div>
-              <div class="hp" aria-hidden="true">
-                <label for="calc-botcheck">ไม่ต้องติ๊กช่องนี้</label>
-                <input id="calc-botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off">
-              </div>
-              <div class="field field-consent">
-                <label class="consent">
-                  <input id="calc-consent" name="consent" type="checkbox" required>
-                  <span>ยินยอมให้ Bonio Labs เก็บและใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องบริการ ตาม<a href="#privacy">นโยบายความเป็นส่วนตัว</a> <span class="req" aria-hidden="true">*</span></span>
-                </label>
-                <p class="field-error" id="calc-consent-error" hidden></p>
-              </div>
-              <button class="btn btn-white btn-block" type="submit">ส่งผลคำนวณ</button>
-              <p class="form-status" id="calc-status" role="status" aria-live="polite" hidden></p>
+              <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="quick-error" role="alert" hidden></p>
+              <p class="quick-note">กรอกแค่อีเมล เราจะติดต่อกลับเพื่อนัดคุย 30 นาที ไม่มีค่าใช้จ่าย การส่งถือว่ายินยอมให้ติดต่อกลับตาม <a href="#privacy">นโยบายความเป็นส่วนตัว</a></p>
             </form>
-
-            <div class="calc-success" id="calc-success" hidden tabindex="-1">
-              <h3>ได้รับผลคำนวณแล้ว</h3>
-              <p>ทีม Bonio Labs จะตรวจตัวเลขของคุณแล้วตอบกลับทางอีเมลที่ให้ไว้</p>
-            </div>
           </div>
         </div>
       </div>
@@ -629,7 +607,7 @@
       <div class="wrap contact-grid">
         <div class="contact-copy">
           <h2>เล่าโจทย์ของคุณให้เราฟัง</h2>
-          <p class="section-lead">กรอกข้อมูลในฟอร์ม ทีม Bonio Labs จะติดต่อกลับทางอีเมลเพื่อนัดคุย 30 นาที</p>
+          <p class="section-lead">กรอกแค่อีเมล ทีม Bonio Labs จะติดต่อกลับเพื่อนัดคุย 30 นาที</p>
           <ul class="plain-list">
             <li>ไม่มีค่าใช้จ่ายในการคุยครั้งแรก</li>
             <li>ถ้างานของคุณไม่เหมาะกับบริการนี้ เราจะบอกตรงๆ</li>
@@ -637,88 +615,22 @@
         </div>
 
         <div class="form-card light">
-          <form id="lead-form" novalidate>
-            <p class="form-legend">ช่องที่มี <span class="req">*</span> ต้องกรอก</p>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="name">ชื่อ-นามสกุล <span class="req" aria-hidden="true">*</span></label>
-                <input id="name" name="name" type="text" autocomplete="name" required>
-                <p class="field-error" id="name-error" hidden></p>
+          <h3 class="quick-title">ฝากอีเมลไว้ เราติดต่อกลับเอง</h3>
+          <form class="quick-lead" data-source="contact" novalidate>
+              <label class="sr-only" for="q-email-contact">อีเมลที่ทำงาน</label>
+              <div class="quick-row">
+                <input id="q-email-contact" name="email" type="email" autocomplete="email" inputmode="email" placeholder="อีเมลที่ทำงานของคุณ" required>
+                <button class="btn btn-solid" type="submit">นัดคุย 30 นาที</button>
               </div>
-              <div class="field">
-                <label for="company">บริษัท <span class="req" aria-hidden="true">*</span></label>
-                <input id="company" name="company" type="text" autocomplete="organization" required>
-                <p class="field-error" id="company-error" hidden></p>
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="email">อีเมลที่ทำงาน <span class="req" aria-hidden="true">*</span></label>
-                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
-                <p class="field-error" id="email-error" hidden></p>
-              </div>
-              <div class="field">
-                <label for="phone">เบอร์โทร <span class="opt">(ไม่บังคับ)</span></label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel">
-                <p class="field-error" id="phone-error" hidden></p>
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="field">
-                <label for="role">ตำแหน่ง <span class="opt">(ไม่บังคับ)</span></label>
-                <input id="role" name="role" type="text" autocomplete="organization-title">
-              </div>
-              <div class="field">
-                <label for="team_size">ขนาดองค์กร <span class="opt">(ไม่บังคับ)</span></label>
-                <select id="team_size" name="team_size">
-                  <option value="">เลือก</option>
-                  <option>ต่ำกว่า 50 คน</option>
-                  <option>50-200 คน</option>
-                  <option>200-2,000 คน</option>
-                  <option>มากกว่า 2,000 คน</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="field">
-              <label for="service">บริการที่สนใจ</label>
-              <select id="service" name="service">
-                <option>AI Use Case &amp; ROI Sprint</option>
-                <option>AI Automation ช่วยงานหลังบ้าน</option>
-                <option>Custom Software พัฒนาซอฟต์แวร์เฉพาะทาง</option>
-                <option>ยังไม่แน่ใจ ขอคำแนะนำ</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="message">โจทย์หรือปัญหาที่อยากแก้ <span class="opt">(ไม่บังคับ)</span></label>
-              <textarea id="message" name="message" rows="4" placeholder="เช่น ทีมใช้ AI อยู่แล้วแต่ยังวัดผลไม่ได้"></textarea>
-            </div>
-
-            <div class="hp" aria-hidden="true">
-              <label for="botcheck">ไม่ต้องติ๊กช่องนี้</label>
-              <input id="botcheck" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off">
-            </div>
-
-            <div class="field field-consent">
-              <label class="consent">
-                <input id="consent" name="consent" type="checkbox" required>
-                <span>ยินยอมให้ Bonio Labs เก็บและใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องบริการ ตาม<a href="#privacy">นโยบายความเป็นส่วนตัว</a> <span class="req" aria-hidden="true">*</span></span>
-              </label>
-              <p class="field-error" id="consent-error" hidden></p>
-            </div>
-
-            <button class="btn btn-solid btn-block" type="submit">ส่งข้อมูลเพื่อนัดคุย</button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-          </form>
-
-          <div class="form-success" id="form-success" hidden tabindex="-1">
-            <h3>ได้รับข้อมูลแล้ว</h3>
-            <p>ขอบคุณที่ติดต่อ Bonio Labs ทีมงานจะติดต่อกลับทางอีเมลที่คุณให้ไว้เพื่อนัดเวลาคุย</p>
-          </div>
+              <details class="quick-more">
+                <summary>เพิ่มรายละเอียด (ไม่บังคับ)</summary>
+                <label for="q-message">โจทย์หรือปัญหาที่อยากแก้</label>
+                <textarea id="q-message" name="message" rows="3" placeholder="เช่น ทีมใช้ AI อยู่แล้วแต่ยังวัดผลไม่ได้"></textarea>
+              </details>
+              <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <p class="quick-error" role="alert" hidden></p>
+              <p class="quick-note">กรอกแค่อีเมล เราจะติดต่อกลับเพื่อนัดคุย 30 นาที ไม่มีค่าใช้จ่าย การส่งถือว่ายินยอมให้ติดต่อกลับตาม <a href="#privacy">นโยบายความเป็นส่วนตัว</a></p>
+            </form>
         </div>
       </div>
     </section>
@@ -726,7 +638,7 @@
     <section id="privacy" class="section-privacy light">
       <div class="wrap narrow">
         <h2>นโยบายความเป็นส่วนตัว</h2>
-        <p>Bonio Labs เก็บข้อมูลที่คุณกรอกในฟอร์มนี้ ได้แก่ ชื่อ บริษัท อีเมล เบอร์โทร ตำแหน่ง และข้อความ เพื่อติดต่อกลับเรื่องบริการเท่านั้น เราไม่ขายหรือส่งต่อข้อมูลให้บุคคลภายนอกเพื่อการตลาด</p>
+        <p>Bonio Labs เก็บอีเมลที่คุณกรอก และข้อมูลที่คุณเลือกให้เพิ่ม เช่น บริการที่สนใจ ขนาดองค์กร และข้อความ เพื่อติดต่อกลับเรื่องบริการเท่านั้น เราไม่ขายหรือส่งต่อข้อมูลให้บุคคลภายนอกเพื่อการตลาด</p>
         <p>เมื่อคุณส่งฟอร์ม เราบันทึกแหล่งที่มาของการเข้าชมด้วย เช่น ลิงก์แคมเปญที่คุณกดเข้ามา และถ้าคุณส่งผลจากเครื่องคำนวณ เราจะได้รับตัวเลขที่คุณกรอกไว้ด้วย</p>
         <p>ข้อมูลจากฟอร์มถูกส่งผ่านผู้ให้บริการส่งฟอร์ม Web3Forms ไปยังอีเมลของ Bonio Labs คุณขอให้ลบหรือแก้ไขข้อมูลได้โดยตอบกลับอีเมลที่ทีมงานติดต่อไป</p>
       </div>

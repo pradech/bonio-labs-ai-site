@@ -358,6 +358,52 @@ h3 { font-size: 1.15rem; font-weight: var(--heading-weight); }
 .calc-success h3 { font-size: 1.4rem; margin-bottom: 8px; }
 .calc-success:focus { outline: none; }
 
+/* ฟอร์มอีเมลช่องเดียว และคำถามเพิ่มแบบแตะเลือกหลังส่ง */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.btn-dark { background: var(--black); color: var(--white); border-color: var(--black); }
+.btn-dark:hover { background: #000000; border-color: #000000; }
+.quick-lead { width: 100%; max-width: 540px; }
+.quick-row { display: flex; gap: 8px; }
+.quick-row input {
+  flex: 1; min-width: 0; min-height: 52px; padding: 12px 16px;
+  font: inherit; color: var(--ink); background: var(--white);
+  border: 2px solid var(--white); border-radius: var(--radius-btn);
+}
+.light .quick-row input { border-color: #c4c4c4; }
+.quick-row input:focus { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.light .quick-row input:focus { outline: 3px solid color-mix(in srgb, var(--blue) 25%, transparent); outline-offset: 0; border-color: var(--blue); }
+.quick-row .btn { flex: none; min-height: 52px; white-space: nowrap; }
+.quick-hp { position: absolute; left: -9999px; }
+.quick-error { margin-top: 8px; font-size: 0.92rem; font-weight: 700; color: var(--yellow); }
+.light .quick-error { color: var(--error); }
+.quick-note { margin-top: 10px; font-size: 0.85rem; opacity: 0.92; }
+.quick-note a { text-underline-offset: 3px; }
+.quick-title { margin-bottom: 16px; font-size: 1.25rem; }
+.quick-more { margin-top: 12px; }
+.quick-more summary { display: flex; align-items: center; min-height: 44px; cursor: pointer; font-size: 0.92rem; color: var(--muted); }
+.quick-more label { margin-top: 4px; }
+.quick-more textarea { min-height: 84px; }
+
+.quick-done { max-width: 540px; --chip-on-bg: var(--white); --chip-on-fg: var(--blue); }
+.light .quick-done { --chip-on-bg: var(--blue); --chip-on-fg: var(--white); }
+.quick-done:focus { outline: none; }
+.quick-done-title { font-size: 1.3rem; font-weight: var(--heading-weight); }
+.quick-done-body { margin-top: 4px; overflow-wrap: anywhere; }
+.quick-extra { margin-top: 18px; padding-top: 16px; border-top: 1px solid currentColor; }
+.quick-extra-q { font-weight: 700; }
+.chip-label { margin-top: 12px; font-size: 0.85rem; opacity: 0.85; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.chip {
+  min-height: 44px; padding: 8px 14px; border-radius: 999px;
+  border: 1px solid currentColor; background: transparent; color: inherit;
+  font: inherit; font-size: 0.92rem; cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--chip-on-bg); color: var(--chip-on-fg); border-color: var(--chip-on-bg); font-weight: 700; }
+.quick-extra-send { margin-top: 16px; background: var(--chip-on-bg); color: var(--chip-on-fg); border-color: var(--chip-on-bg); }
+.quick-extra-status { margin-top: 8px; min-height: 1.4em; font-size: 0.9rem; }
+.quick-extra-thanks { font-weight: 700; }
+.hero-note { margin-top: 18px; }
+
 /* Case study: Bonio Portal */
 .dark .section-lead { color: var(--muted-on-dark); }
 .eyebrow { margin-bottom: 10px; font-weight: 700; font-size: 0.9rem; color: var(--muted-on-dark); }
@@ -482,6 +528,8 @@ input:focus, select:focus, textarea:focus { outline: 3px solid color-mix(in srgb
 
 @media (max-width: 600px) {
   .wrap { padding: 0 16px; }
+  .quick-row { flex-direction: column; }
+  .quick-row .btn { width: 100%; }
   .calc-inputs { grid-template-columns: 1fr; padding: 22px 16px 6px; }
   .calc-result { padding: 22px 16px; }
   .viz-stage { height: 300px; }

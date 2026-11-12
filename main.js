@@ -8,34 +8,48 @@
     th: {
       navOpen: "เปิดเมนู",
       navClose: "ปิดเมนู",
-      errName: "กรุณากรอกชื่อ-นามสกุล",
-      errCompany: "กรุณากรอกชื่อบริษัท",
       errEmail: "กรุณากรอกอีเมลให้ถูกต้อง เช่น name@company.com",
-      errPhone: "กรุณากรอกเบอร์โทรเป็นตัวเลข 8 หลักขึ้นไป",
-      errConsent: "กรุณาให้ความยินยอมก่อนส่งข้อมูล",
       busy: "กำลังส่ง...",
-      notConfigured: "ระบบรับข้อมูลยังไม่พร้อมใช้งาน ข้อมูลของคุณยังไม่ถูกส่ง กรุณาลองใหม่ภายหลัง",
-      sendFailed: "ส่งข้อมูลไม่สำเร็จ กรุณาลองอีกครั้ง ข้อมูลที่กรอกไว้ยังอยู่ครบ",
-      networkError: "เชื่อมต่อไม่ได้ กรุณาตรวจอินเทอร์เน็ตแล้วลองอีกครั้ง ข้อมูลที่กรอกไว้ยังอยู่ครบ",
+      notConfigured: "ระบบรับข้อมูลยังไม่พร้อมใช้งาน อีเมลของคุณยังไม่ถูกส่ง กรุณาลองใหม่ภายหลัง",
+      sendFailed: "ส่งไม่สำเร็จ กรุณาลองอีกครั้ง",
+      networkError: "เชื่อมต่อไม่ได้ กรุณาตรวจอินเทอร์เน็ตแล้วลองอีกครั้ง",
       subjectPrefix: "Lead ใหม่จากเว็บไซต์ Bonio Labs: ",
+      detailsSubject: "Lead ใหม่จากเว็บไซต์ Bonio Labs: ข้อมูลเพิ่มจาก ",
       fromName: "เว็บไซต์ Bonio Labs",
-      consentValue: "ยินยอมให้ติดต่อกลับ"
+      consentValue: "ยินยอมให้ติดต่อกลับ (ส่งอีเมลด้วยตนเอง)",
+      doneTitle: "ได้รับอีเมลแล้ว",
+      doneBody: "เราจะติดต่อกลับไปที่ ",
+      extraQuestion: "บอกเพิ่มอีกนิดได้ไหม ไม่บังคับ แตะเลือกได้เลย",
+      extraService: "บริการที่สนใจ",
+      extraSize: "ขนาดองค์กร",
+      extraSend: "ส่งข้อมูลเพิ่ม",
+      extraPick: "แตะเลือกอย่างน้อยหนึ่งข้อก่อนส่ง",
+      extraThanks: "ขอบคุณ ได้รับข้อมูลเพิ่มแล้ว",
+      services: ["AI Use Case & ROI Sprint", "AI Automation ช่วยงานหลังบ้าน", "Custom Software พัฒนาซอฟต์แวร์เฉพาะทาง", "ยังไม่แน่ใจ ขอคำแนะนำ"],
+      sizes: ["ต่ำกว่า 50 คน", "50-200 คน", "200-2,000 คน", "มากกว่า 2,000 คน"]
     },
     en: {
       navOpen: "Open menu",
       navClose: "Close menu",
-      errName: "Please enter your full name.",
-      errCompany: "Please enter your company name.",
       errEmail: "Please enter a valid email, for example name@company.com.",
-      errPhone: "Please enter a phone number with at least 8 digits.",
-      errConsent: "Please give your consent before sending.",
       busy: "Sending...",
-      notConfigured: "The form is not available right now. Your details have not been sent. Please try again later.",
-      sendFailed: "Your details could not be sent. Please try again. What you entered is still here.",
-      networkError: "No connection. Please check your internet and try again. What you entered is still here.",
+      notConfigured: "The form is not available right now. Your email has not been sent. Please try again later.",
+      sendFailed: "It could not be sent. Please try again.",
+      networkError: "No connection. Please check your internet and try again.",
       subjectPrefix: "New lead from the Bonio Labs website (EN): ",
+      detailsSubject: "New lead from the Bonio Labs website (EN): more details from ",
       fromName: "Bonio Labs website",
-      consentValue: "Agreed to be contacted"
+      consentValue: "Agreed to be contacted (submitted their own email)",
+      doneTitle: "We have your email",
+      doneBody: "We will reply to ",
+      extraQuestion: "Can you tell us a little more? Optional, just tap.",
+      extraService: "Service you are interested in",
+      extraSize: "Organization size",
+      extraSend: "Send details",
+      extraPick: "Tap at least one option before sending.",
+      extraThanks: "Thank you. We have your details.",
+      services: ["AI Use Case & ROI Sprint", "AI Automation for back-office work", "Custom Software development", "Not sure yet, please advise"],
+      sizes: ["Under 50 people", "50-200 people", "200-2,000 people", "Over 2,000 people"]
     }
   };
   var t = TEXT[LANG];
@@ -43,9 +57,9 @@
   var ENDPOINT = "https://api.web3forms.com/submit";
   var cfg = window.BONIO_CONFIG || {};
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  var PHONE_RE = /^[0-9+\-\s()]{8,20}$/;
+  var FREE_MAIL = ["gmail.com", "hotmail.com", "outlook.com", "live.com", "yahoo.com", "icloud.com", "me.com", "proton.me", "protonmail.com"];
 
-  // แหล่งที่มาของผู้เข้าชม: เก็บ utm_* และเว็บที่ส่งมา ครั้งแรกของ session ไว้แนบไปกับ lead
+  // แหล่งที่มาของผู้เข้าชม: เก็บ utm_* และเว็บที่ส่งมาไว้แนบไปกับ lead
   // เพื่อให้รู้ว่า lead แต่ละรายมาจากช่องทางไหน
   var ATTR_KEY = "bonio_attribution";
   var UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"];
@@ -77,7 +91,7 @@
   }
   var attribution = readAttribution();
 
-  // ส่ง lead ไปที่ Web3Forms ใช้ร่วมกันทั้งฟอร์มติดต่อและเครื่องคำนวณ
+  // ส่ง lead ไปที่ Web3Forms
   // คืน Promise ของ { ok: true } หรือ { ok: false, reason: "not-configured" | "rejected" | "network" }
   function sendLead(fields) {
     if (!cfg.web3formsAccessKey) {
@@ -118,14 +132,8 @@
     return t.sendFailed;
   }
 
-  // ให้สคริปต์อื่นของเว็บ (calc.js) ใช้ร่วมกัน
-  window.BonioLabs = {
-    lang: LANG,
-    emailPattern: EMAIL_RE,
-    text: t,
-    sendLead: sendLead,
-    failureMessage: failureMessage
-  };
+  // calc.js ลงทะเบียนตัวเลขจากเครื่องคำนวณไว้ที่ extraFields.calculator เพื่อแนบไปกับ lead
+  window.BonioLabs = { lang: LANG, extraFields: {} };
 
   // เมนูมือถือ: ปุ่มเปิดปิด ปิดเมื่อกดลิงก์หรือกด Escape
   var navToggle = document.querySelector(".nav-toggle");
@@ -150,123 +158,174 @@
     }
   });
 
-  // ฟอร์มติดต่อหลัก
-  var form = document.getElementById("lead-form");
-  var statusEl = document.getElementById("form-status");
-  var successEl = document.getElementById("form-success");
-  var submitBtn = form.querySelector('button[type="submit"]');
-  var submitLabel = submitBtn.textContent;
+  // ---- ฟอร์มอีเมลช่องเดียว (.quick-lead): ใช้ทั้งส่วนบนสุด เครื่องคำนวณ และส่วนติดต่อ ----
 
-  var rules = [
-    { id: "name", test: function (v) { return v.length >= 2; }, msg: t.errName },
-    { id: "company", test: function (v) { return v.length >= 2; }, msg: t.errCompany },
-    { id: "email", test: function (v) { return EMAIL_RE.test(v); }, msg: t.errEmail },
-    { id: "phone", test: function (v) { return v === "" || PHONE_RE.test(v); }, msg: t.errPhone }
-  ];
-
-  function value(id) {
-    return (document.getElementById(id).value || "").trim();
+  // เดาชื่อบริษัทจากโดเมนอีเมล เพื่อไม่ต้องให้ผู้ใช้กรอกเอง อีเมลฟรีจะไม่เดา
+  function companyGuess(email) {
+    var domain = email.split("@")[1].toLowerCase();
+    return FREE_MAIL.indexOf(domain) === -1 ? domain : "";
   }
 
-  function setFieldError(id, msg) {
-    var input = document.getElementById(id);
-    var err = document.getElementById(id + "-error");
-    if (msg) {
-      input.setAttribute("aria-invalid", "true");
-      input.setAttribute("aria-describedby", id + "-error");
-      err.textContent = msg;
-      err.hidden = false;
-    } else {
-      input.removeAttribute("aria-invalid");
-      input.removeAttribute("aria-describedby");
-      err.textContent = "";
-      err.hidden = true;
-    }
-  }
-
-  function setStatus(kind, text) {
-    if (!text) {
-      statusEl.hidden = true;
-      statusEl.textContent = "";
-      return;
-    }
-    statusEl.dataset.kind = kind;
-    statusEl.textContent = text;
-    statusEl.hidden = false;
-  }
-
-  function validate() {
-    var firstInvalid = null;
-
-    rules.forEach(function (rule) {
-      var ok = rule.test(value(rule.id));
-      setFieldError(rule.id, ok ? "" : rule.msg);
-      if (!ok && !firstInvalid) firstInvalid = document.getElementById(rule.id);
-    });
-
-    var consent = document.getElementById("consent");
-    setFieldError("consent", consent.checked ? "" : t.errConsent);
-    if (!consent.checked && !firstInvalid) firstInvalid = consent;
-
-    if (firstInvalid) firstInvalid.focus();
-    return !firstInvalid;
-  }
-
-  function setBusy(busy) {
-    submitBtn.disabled = busy;
-    submitBtn.textContent = busy ? t.busy : submitLabel;
-  }
-
-  // ล้างข้อความผิดพลาดของช่องนั้นเมื่อผู้ใช้แก้ไข
-  rules.forEach(function (rule) {
-    document.getElementById(rule.id).addEventListener("input", function () {
-      if (rule.test(value(rule.id))) setFieldError(rule.id, "");
-    });
-  });
-  document.getElementById("consent").addEventListener("change", function (e) {
-    if (e.target.checked) setFieldError("consent", "");
-  });
-
-  // ลิงก์สอบถามบริการบนการ์ดบริการ เลือกบริการนั้นในฟอร์มให้ล่วงหน้า
+  // บริการที่ผู้ใช้กดสนใจจากการ์ดบริการ จะแนบไปกับ lead และเลือกไว้ให้ในคำถามเพิ่ม
+  var pendingService = "";
   Array.prototype.forEach.call(document.querySelectorAll("[data-service]"), function (link) {
     link.addEventListener("click", function () {
-      document.getElementById("service").value = link.getAttribute("data-service");
+      pendingService = link.getAttribute("data-service");
+      var target = document.getElementById("q-email-contact");
+      if (target) window.setTimeout(function () { target.focus({ preventScroll: true }); }, 0);
     });
   });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    setStatus("", "");
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text) node.textContent = text;
+    return node;
+  }
 
-    if (!validate()) return;
+  function chipGroup(label, options, selected) {
+    var group = el("div", "chip-group");
+    group.appendChild(el("p", "chip-label", label));
+    var chips = el("div", "chips");
+    chips.setAttribute("role", "group");
+    chips.setAttribute("aria-label", label);
+    options.forEach(function (option) {
+      var chip = el("button", "chip", option);
+      chip.type = "button";
+      chip.setAttribute("aria-pressed", option === selected ? "true" : "false");
+      chip.addEventListener("click", function () {
+        var wasOn = chip.getAttribute("aria-pressed") === "true";
+        Array.prototype.forEach.call(chips.children, function (c) { c.setAttribute("aria-pressed", "false"); });
+        chip.setAttribute("aria-pressed", wasOn ? "false" : "true");
+      });
+      chips.appendChild(chip);
+    });
+    group.appendChild(chips);
+    group.value = function () {
+      var on = chips.querySelector('[aria-pressed="true"]');
+      return on ? on.textContent : "";
+    };
+    return group;
+  }
 
-    // honeypot: คนจริงมองไม่เห็นช่องนี้ ถ้าถูกติ๊กแปลว่าเป็น bot จึงไม่ส่ง
-    if (document.getElementById("botcheck").checked) return;
+  // หลังส่งอีเมลสำเร็จ: ยืนยัน แล้วถามเพิ่มแบบแตะเลือกได้ ไม่บังคับ
+  function showDone(form, email) {
+    var done = el("div", "quick-done");
+    done.tabIndex = -1;
+    done.appendChild(el("p", "quick-done-title", t.doneTitle));
+    var body = el("p", "quick-done-body", t.doneBody);
+    body.appendChild(el("strong", "", email));
+    done.appendChild(body);
 
-    var company = value("company");
-    setBusy(true);
+    var extra = el("div", "quick-extra");
+    extra.appendChild(el("p", "quick-extra-q", t.extraQuestion));
+    var serviceGroup = chipGroup(t.extraService, t.services, pendingService);
+    var sizeGroup = chipGroup(t.extraSize, t.sizes, "");
+    extra.appendChild(serviceGroup);
+    extra.appendChild(sizeGroup);
+    var send = el("button", "btn btn-small quick-extra-send", t.extraSend);
+    send.type = "button";
+    extra.appendChild(send);
+    var status = el("p", "quick-extra-status");
+    status.setAttribute("role", "status");
+    extra.appendChild(status);
+    done.appendChild(extra);
 
-    sendLead({
-      subject: t.subjectPrefix + company,
-      lead_type: "contact-form",
-      name: value("name"),
-      email: value("email"),
-      company: company,
-      phone: value("phone"),
-      role: value("role"),
-      team_size: value("team_size"),
-      service: value("service"),
-      message: value("message"),
-      consent: t.consentValue
-    }).then(function (result) {
-      setBusy(false);
-      if (!result.ok) {
-        setStatus("error", failureMessage(result.reason));
+    send.addEventListener("click", function () {
+      var service = serviceGroup.value();
+      var size = sizeGroup.value();
+      if (!service && !size) { status.textContent = t.extraPick; return; }
+      send.disabled = true;
+      send.textContent = t.busy;
+      sendLead({
+        subject: t.detailsSubject + email,
+        lead_type: "quick-details",
+        email: email,
+        service: service,
+        team_size: size
+      }).then(function (result) {
+        if (!result.ok) {
+          send.disabled = false;
+          send.textContent = t.extraSend;
+          status.textContent = failureMessage(result.reason);
+          return;
+        }
+        extra.textContent = "";
+        extra.appendChild(el("p", "quick-extra-thanks", t.extraThanks));
+      });
+    });
+
+    form.hidden = true;
+    form.parentNode.insertBefore(done, form.nextSibling);
+    done.focus();
+  }
+
+  function initQuickLead(form) {
+    var input = form.querySelector('input[type="email"]');
+    var button = form.querySelector('button[type="submit"]');
+    var error = form.querySelector(".quick-error");
+    var source = form.getAttribute("data-source") || "page";
+    var buttonLabel = button.textContent;
+
+    function setError(message) {
+      if (message) {
+        error.textContent = message;
+        error.hidden = false;
+        input.setAttribute("aria-invalid", "true");
+      } else {
+        error.textContent = "";
+        error.hidden = true;
+        input.removeAttribute("aria-invalid");
+      }
+    }
+
+    input.addEventListener("input", function () {
+      if (EMAIL_RE.test(input.value.trim())) setError("");
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var email = input.value.trim();
+      if (!EMAIL_RE.test(email)) {
+        setError(t.errEmail);
+        input.focus();
         return;
       }
-      form.hidden = true;
-      successEl.hidden = false;
-      successEl.focus();
+      setError("");
+
+      // honeypot: คนจริงมองไม่เห็นช่องนี้ ถ้าถูกติ๊กแปลว่าเป็น bot จึงไม่ส่ง
+      if (form.querySelector(".quick-hp").checked) return;
+
+      var guess = companyGuess(email);
+      var fields = {
+        subject: t.subjectPrefix + (guess || email),
+        lead_type: "quick-" + source,
+        email: email,
+        company_guess: guess,
+        consent: t.consentValue
+      };
+      if (pendingService) fields.service = pendingService;
+      var message = form.querySelector("textarea");
+      if (message && message.value.trim()) fields.message = message.value.trim();
+      var extra = window.BonioLabs.extraFields[source];
+      if (typeof extra === "function") {
+        var more = extra();
+        Object.keys(more).forEach(function (key) { fields[key] = more[key]; });
+      }
+
+      button.disabled = true;
+      button.textContent = t.busy;
+      sendLead(fields).then(function (result) {
+        button.disabled = false;
+        button.textContent = buttonLabel;
+        if (!result.ok) {
+          setError(failureMessage(result.reason));
+          return;
+        }
+        showDone(form, email);
+      });
     });
-  });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll("form.quick-lead"), initQuickLead);
 })();

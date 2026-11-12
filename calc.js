@@ -1,5 +1,5 @@
 // เครื่องคำนวณความคุ้มค่าใน section #calculator
-// คำนวณทันทีเมื่อผู้ใช้แก้ตัวเลข และส่งผลคำนวณพร้อมข้อมูลติดต่อเป็น lead ผ่าน window.BonioLabs.sendLead (main.js)
+// คำนวณทันทีเมื่อผู้ใช้แก้ตัวเลข ตัวเลขล่าสุดจะถูกแนบไปกับ lead ผ่าน window.BonioLabs.extraFields (main.js)
 (function () {
   "use strict";
 
@@ -14,28 +14,14 @@
       hours: function (n) { return fmt(n) + " ชั่วโมง"; },
       percent: function (n) { return n + "%"; },
       positive: "ผลสุทธิต่อปี หลังหักค่าเครื่องมือ AI",
-      negative: "ตัวเลขชุดนี้ยังไม่คุ้มค่าเครื่องมือ AI ลองเลือกงานที่มีปริมาณมากกว่านี้",
-      errName: "กรุณากรอกชื่อ-นามสกุล",
-      errEmail: "กรุณากรอกอีเมลให้ถูกต้อง เช่น name@company.com",
-      errCompany: "กรุณากรอกชื่อบริษัท",
-      errConsent: "กรุณาให้ความยินยอมก่อนส่งข้อมูล",
-      busy: "กำลังส่ง...",
-      subject: "Lead จากเครื่องคำนวณ Bonio Labs: ",
-      consentValue: "ยินยอมให้ติดต่อกลับ"
+      negative: "ตัวเลขชุดนี้ยังไม่คุ้มค่าเครื่องมือ AI ลองเลือกงานที่มีปริมาณมากกว่านี้"
     },
     en: {
       currency: function (n) { return "THB " + fmt(n); },
       hours: function (n) { return fmt(n) + " hours"; },
       percent: function (n) { return n + "%"; },
       positive: "Net result per year, after AI tool costs",
-      negative: "These numbers do not yet cover the AI tool cost. Try a task with a higher volume.",
-      errName: "Please enter your full name.",
-      errEmail: "Please enter a valid email, for example name@company.com.",
-      errCompany: "Please enter your company name.",
-      errConsent: "Please give your consent before sending.",
-      busy: "Sending...",
-      subject: "Lead from the Bonio Labs calculator (EN): ",
-      consentValue: "Agreed to be contacted"
+      negative: "These numbers do not yet cover the AI tool cost. Try a task with a higher volume."
     }
   };
   var t = TEXT[LANG];
@@ -93,83 +79,9 @@
   form.addEventListener("submit", function (e) { e.preventDefault(); });
   calculate();
 
-  // ฟอร์มสั้นสำหรับส่งผลคำนวณให้ทีมช่วยตรวจ
-  var openBtn = document.getElementById("calc-open");
-  var leadForm = document.getElementById("calc-lead-form");
-  var statusEl = document.getElementById("calc-status");
-  var successEl = document.getElementById("calc-success");
-  var submitBtn = leadForm.querySelector('button[type="submit"]');
-  var submitLabel = submitBtn.textContent;
-
-  openBtn.addEventListener("click", function () {
-    leadForm.hidden = false;
-    openBtn.hidden = true;
-    document.getElementById("calc-name").focus();
-  });
-
-  function val(id) {
-    return (document.getElementById(id).value || "").trim();
-  }
-
-  function setError(id, msg) {
-    var input = document.getElementById(id);
-    var err = document.getElementById(id + "-error");
-    if (msg) {
-      input.setAttribute("aria-invalid", "true");
-      input.setAttribute("aria-describedby", id + "-error");
-      err.textContent = msg;
-      err.hidden = false;
-    } else {
-      input.removeAttribute("aria-invalid");
-      input.removeAttribute("aria-describedby");
-      err.textContent = "";
-      err.hidden = true;
-    }
-  }
-
-  var rules = [
-    { id: "calc-name", test: function (v) { return v.length >= 2; }, msg: t.errName },
-    { id: "calc-email", test: function (v) { return shared.emailPattern.test(v); }, msg: t.errEmail },
-    { id: "calc-company", test: function (v) { return v.length >= 2; }, msg: t.errCompany }
-  ];
-
-  rules.forEach(function (rule) {
-    document.getElementById(rule.id).addEventListener("input", function () {
-      if (rule.test(val(rule.id))) setError(rule.id, "");
-    });
-  });
-  document.getElementById("calc-consent").addEventListener("change", function (e) {
-    if (e.target.checked) setError("calc-consent", "");
-  });
-
-  leadForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    statusEl.hidden = true;
-
-    var firstInvalid = null;
-    rules.forEach(function (rule) {
-      var ok = rule.test(val(rule.id));
-      setError(rule.id, ok ? "" : rule.msg);
-      if (!ok && !firstInvalid) firstInvalid = document.getElementById(rule.id);
-    });
-    var consent = document.getElementById("calc-consent");
-    setError("calc-consent", consent.checked ? "" : t.errConsent);
-    if (!consent.checked && !firstInvalid) firstInvalid = consent;
-    if (firstInvalid) { firstInvalid.focus(); return; }
-
-    if (document.getElementById("calc-botcheck").checked) return;
-
-    var company = val("calc-company");
-    submitBtn.disabled = true;
-    submitBtn.textContent = t.busy;
-
-    shared.sendLead({
-      subject: t.subject + company,
-      lead_type: "roi-calculator",
-      name: val("calc-name"),
-      email: val("calc-email"),
-      company: company,
-      consent: t.consentValue,
+  // แนบตัวเลขล่าสุดไปกับ lead เมื่อผู้ใช้ส่งอีเมลจากฟอร์มใต้ผลคำนวณ (ดู initQuickLead ใน main.js)
+  shared.extraFields.calculator = function () {
+    return {
       calc_tasks_per_month: latest.volume,
       calc_minutes_per_task: latest.minutes,
       calc_cost_per_hour_thb: latest.cost,
@@ -180,18 +92,6 @@
       calc_value_per_year_thb: latest.valueYear,
       calc_tool_cost_per_year_thb: latest.toolsYear,
       calc_net_per_year_thb: latest.net
-    }).then(function (result) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = submitLabel;
-      if (!result.ok) {
-        statusEl.dataset.kind = "error";
-        statusEl.textContent = shared.failureMessage(result.reason);
-        statusEl.hidden = false;
-        return;
-      }
-      leadForm.hidden = true;
-      successEl.hidden = false;
-      successEl.focus();
-    });
-  });
+    };
+  };
 })();
