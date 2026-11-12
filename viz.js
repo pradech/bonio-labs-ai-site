@@ -52,6 +52,32 @@
 
   var width = 0, height = 0;
 
+  // สีหลักอ่านจากตัวแปร --blue ของหน้าเว็บ แล้วผสมกับขาวเป็นเฉดอ่อนสำหรับแสงและเส้น
+  var accent = { base: "14, 48, 226", mid: "70, 100, 240", soft: "130, 160, 255", light: "170, 190, 255", pale: "200, 212, 255" };
+  var probe = document.createElement("span");
+  probe.style.display = "none";
+  document.body.appendChild(probe);
+
+  function mix(rgb, amount) {
+    return rgb.map(function (c) { return Math.round(c + (255 - c) * amount); }).join(", ");
+  }
+
+  function readAccent() {
+    var raw = getComputedStyle(document.documentElement).getPropertyValue("--blue").trim();
+    if (!raw) return;
+    probe.style.color = "";
+    probe.style.color = raw;
+    var m = getComputedStyle(probe).color.match(/[\d.]+/g);
+    if (!m || m.length < 3) return;
+    var rgb = [Math.round(+m[0]), Math.round(+m[1]), Math.round(+m[2])];
+    accent = { base: rgb.join(", "), mid: mix(rgb, 0.24), soft: mix(rgb, 0.48), light: mix(rgb, 0.65), pale: mix(rgb, 0.78) };
+  }
+  readAccent();
+  window.addEventListener("bonio:design-change", function () {
+    readAccent();
+    if (reduceMotion) draw(STATIC_T, 0);
+  });
+
   function trail(from, ctrl, to, progress, color, size, alpha) {
     for (var j = 0; j < 10; j++) {
       var p = progress - j * 0.025;
@@ -85,7 +111,7 @@
 
     // เส้นจาง ๆ เชื่อมงานแต่ละจุดกับแกน
     ctx.lineWidth = 1;
-    ctx.strokeStyle = "rgba(120, 150, 255, " + (0.08 * master) + ")";
+    ctx.strokeStyle = "rgba(" + accent.soft + ", " + (0.08 * master) + ")";
     for (k = 0; k < N; k++) {
       n = nodes[k];
       ctx.beginPath();
@@ -112,15 +138,15 @@
       var alpha = (isTop ? 0.85 + 0.15 * highlight : 0.85 - 0.55 * highlight) * master;
       var grad = ctx.createLinearGradient(0, baseY - h, 0, baseY);
       if (isTop) {
-        grad.addColorStop(0, "rgba(170, 190, 255, " + alpha + ")");
-        grad.addColorStop(1, "rgba(14, 48, 226, " + alpha + ")");
+        grad.addColorStop(0, "rgba(" + accent.light + ", " + alpha + ")");
+        grad.addColorStop(1, "rgba(" + accent.base + ", " + alpha + ")");
       } else {
-        grad.addColorStop(0, "rgba(70, 100, 240, " + alpha + ")");
-        grad.addColorStop(1, "rgba(14, 48, 226, " + alpha * 0.8 + ")");
+        grad.addColorStop(0, "rgba(" + accent.mid + ", " + alpha + ")");
+        grad.addColorStop(1, "rgba(" + accent.base + ", " + alpha * 0.8 + ")");
       }
       ctx.save();
       if (isTop && highlight > 0) {
-        ctx.shadowColor = "rgba(70, 110, 255, " + (0.9 * highlight * master) + ")";
+        ctx.shadowColor = "rgba(" + accent.mid + ", " + (0.9 * highlight * master) + ")";
         ctx.shadowBlur = 20 * unit;
       }
       ctx.fillStyle = grad;
@@ -140,8 +166,8 @@
 
     // แสงรอบแกน
     var glow = ctx.createRadialGradient(core.x, core.y, R * 0.2, core.x, core.y, R * 2.6);
-    glow.addColorStop(0, "rgba(14, 48, 226, " + (0.6 * master) + ")");
-    glow.addColorStop(1, "rgba(14, 48, 226, 0)");
+    glow.addColorStop(0, "rgba(" + accent.base + ", " + (0.6 * master) + ")");
+    glow.addColorStop(1, "rgba(" + accent.base + ", 0)");
     ctx.fillStyle = glow;
     ctx.beginPath();
     ctx.arc(core.x, core.y, R * 2.6, 0, Math.PI * 2);
@@ -153,7 +179,7 @@
       var from = { x: n.x * W, y: n.y * H };
       var pin = (t - n.launch) / IN;
       if (pin > 0 && pin < 1) {
-        trail(from, { x: from.x + (core.x - from.x) * 0.55, y: from.y }, core, easeInOut(pin), "rgb(200, 212, 255)", 3.2 * unit, master);
+        trail(from, { x: from.x + (core.x - from.x) * 0.55, y: from.y }, core, easeInOut(pin), "rgb(" + accent.pale + ")", 3.2 * unit, master);
       }
       var pout = (t - (n.launch + IN + GAP)) / OUT;
       if (pout > 0 && pout < 1) {
@@ -161,7 +187,7 @@
           x: barLeft + n.rank * slot + slot / 2,
           y: baseY - VALUES[n.rank] * maxBarH
         };
-        trail(core, { x: core.x + (target.x - core.x) * 0.45, y: target.y }, target, easeInOut(pout), "rgb(130, 160, 255)", 3 * unit, master);
+        trail(core, { x: core.x + (target.x - core.x) * 0.45, y: target.y }, target, easeInOut(pout), "rgb(" + accent.soft + ")", 3 * unit, master);
       }
     }
 
@@ -175,7 +201,7 @@
     for (k = 0; k < rings.length; k++) {
       var ring = rings[k];
       var start = clock * ring.speed + k * 2;
-      ctx.strokeStyle = "rgba(130, 160, 255, " + (ring.a * master) + ")";
+      ctx.strokeStyle = "rgba(" + accent.soft + ", " + (ring.a * master) + ")";
       ctx.lineWidth = ring.w * unit;
       ctx.beginPath();
       ctx.arc(core.x, core.y, ring.r, start, start + Math.PI * ring.len);
@@ -188,7 +214,7 @@
       var since = t - (nodes[k].launch + IN);
       if (since >= 0 && since < 0.7) {
         var pr = since / 0.7;
-        ctx.strokeStyle = "rgba(170, 190, 255, " + ((1 - pr) * 0.7 * master) + ")";
+        ctx.strokeStyle = "rgba(" + accent.light + ", " + ((1 - pr) * 0.7 * master) + ")";
         ctx.lineWidth = 2 * unit;
         ctx.beginPath();
         ctx.arc(core.x, core.y, R * (1.05 + pr * 0.9), 0, Math.PI * 2);
@@ -219,7 +245,7 @@
       var ny = n.y * H + Math.sin(clock * 0.9 + n.phase) * 3 * unit;
       ctx.save();
       ctx.globalAlpha = shown * (launched ? 0.4 : 1) * master;
-      ctx.shadowColor = "rgba(70, 110, 255, 0.9)";
+      ctx.shadowColor = "rgba(" + accent.mid + ", 0.9)";
       ctx.shadowBlur = launched ? 0 : 12 * unit;
       ctx.fillStyle = "#ffffff";
       ctx.beginPath();
