@@ -16,7 +16,7 @@
   --font: "Prompt", "Sarabun", "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", sans-serif;
   --header-h: 68px;
 
-  /* ค่าดีไซน์ที่ปรับได้จากแผงปรับดีไซน์ (เปิดด้วย ?design=1) ค่าที่บันทึกถาวรอยู่ใน theme.css */
+  /* ค่าดีไซน์หลักของเว็บ แก้ที่นี่ที่เดียวเพื่อปรับทั้งหน้า */
   --font-base: 16px;
   --line-height: 1.6;
   --heading-scale: 1;
