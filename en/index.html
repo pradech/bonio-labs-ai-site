@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=15">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -435,59 +435,57 @@
 
     <section id="tool" class="section gray light" aria-labelledby="tool-title">
       <div class="wrap">
-        <h2 id="tool-title">Try it yourself: <span class="blue">turn a meeting into action items</span></h2>
-        <p class="section-lead">Choose the format you want, then copy the prompt into the AI tool your organization has approved, together with your meeting notes. This website never receives or sees your meeting text.</p>
+        <h2 id="tool-title">Try it: <span class="blue">turn meeting notes into action items</span></h2>
+        <p class="section-lead">Tap what you want, then copy the prompt into the AI tool your organization allows. We never see your meeting notes.</p>
 
         <div class="tool">
           <div class="tool-controls">
-            <fieldset data-key="format" data-mode="single">
-              <legend>1. Output format</legend>
-              <div class="chips">
-              <button class="chip" type="button" data-value="table" aria-pressed="true">Action item table</button>
-              <button class="chip" type="button" data-value="email" aria-pressed="false">Summary email to attendees</button>
-              <button class="chip" type="button" data-value="brief" aria-pressed="false">Short brief for executives</button>
-              </div>
-            </fieldset>
-            <fieldset data-key="include" data-mode="multi">
-              <legend>2. What it must include</legend>
-              <div class="chips">
-              <button class="chip" type="button" data-value="owner" aria-pressed="true">Owners</button>
-              <button class="chip" type="button" data-value="due" aria-pressed="true">Due dates</button>
-              <button class="chip" type="button" data-value="decisions" aria-pressed="true">Decisions</button>
-              <button class="chip" type="button" data-value="open" aria-pressed="false">Open issues</button>
-              </div>
-            </fieldset>
-            <fieldset data-key="language" data-mode="single">
-              <legend>3. Output language</legend>
-              <div class="chips">
-              <button class="chip" type="button" data-value="th" aria-pressed="false">Thai</button>
-              <button class="chip" type="button" data-value="en" aria-pressed="true">English</button>
-              </div>
-            </fieldset>
-            <fieldset data-key="tone" data-mode="single">
-              <legend>4. Tone</legend>
-              <div class="chips">
-              <button class="chip" type="button" data-value="formal" aria-pressed="true">Formal</button>
-              <button class="chip" type="button" data-value="brief" aria-pressed="false">Brief</button>
-              </div>
-            </fieldset>
+              <fieldset data-key="format" data-mode="single">
+                <legend>Pick a format</legend>
+                <div class="chips">
+                <button class="chip" type="button" data-value="table" aria-pressed="true">Action table</button>
+                <button class="chip" type="button" data-value="email" aria-pressed="false">Summary email</button>
+                <button class="chip" type="button" data-value="brief" aria-pressed="false">Executive brief</button>
+                </div>
+              </fieldset>
+              <fieldset data-key="include" data-mode="multi">
+                <legend>Include</legend>
+                <div class="chips">
+                <button class="chip" type="button" data-value="owner" aria-pressed="true">Who</button>
+                <button class="chip" type="button" data-value="due" aria-pressed="true">When</button>
+                <button class="chip" type="button" data-value="decisions" aria-pressed="true">Decisions</button>
+                <button class="chip" type="button" data-value="open" aria-pressed="false">Open issues</button>
+                </div>
+              </fieldset>
+            <div class="tool-row">
+              <fieldset data-key="language" data-mode="single">
+                <legend>Language</legend>
+                <div class="chips">
+                <button class="chip" type="button" data-value="th" aria-pressed="false">Thai</button>
+                <button class="chip" type="button" data-value="en" aria-pressed="true">English</button>
+                </div>
+              </fieldset>
+              <fieldset data-key="tone" data-mode="single">
+                <legend>Tone</legend>
+                <div class="chips">
+                <button class="chip" type="button" data-value="formal" aria-pressed="true">Formal</button>
+                <button class="chip" type="button" data-value="brief" aria-pressed="false">Brief</button>
+                </div>
+              </fieldset>
+            </div>
           </div>
 
           <div class="tool-output">
-            <p class="tool-output-title">Ready-to-use prompt</p>
-            <pre id="tool-prompt" tabindex="0" aria-label="Ready-to-use prompt"></pre>
+            <p class="tool-output-title">Your prompt</p>
+            <pre id="tool-prompt" tabindex="0" aria-label="Your prompt"></pre>
             <button class="btn btn-white btn-block" type="button" id="tool-copy">Copy the prompt</button>
             <p class="tool-status" id="tool-status" role="status"></p>
-            <ol class="tool-steps">
-              <li>Copy the prompt</li>
-              <li>Paste it into the AI tool your organization has approved</li>
-              <li>Replace the bracketed text with your meeting notes and send</li>
-            </ol>
+            <p class="tool-how">Paste it into the AI tool your organization allows, then swap the bracketed text for your notes.</p>
           </div>
         </div>
 
-        <div class="tool-example">
-          <h3>A before and after example</h3>
+        <details class="tool-example">
+          <summary>See a before and after example</summary>
           <div class="tool-example-grid">
             <div class="tool-before">
               <p class="tool-tag">Meeting notes</p>
@@ -499,26 +497,27 @@
 - May will prepare the staff communication plan, due next week</pre>
             </div>
             <div class="tool-after">
-              <p class="tool-tag">Result as an action item table</p>
+              <p class="tool-tag">Result as an action table</p>
               <table>
                 <thead>
-                  <tr><th scope="col">Action</th><th scope="col">Owner</th><th scope="col">Due</th></tr>
+                  <tr><th scope="col">Action</th><th scope="col">Who</th><th scope="col">When</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>Send the Q3 sales report</td><td>Nuch</td><td>This Friday</td></tr>
-                  <tr><td>Prepare the staff communication plan</td><td>May</td><td>Next week</td></tr>
-                  <tr><td>Talk to the vendor about the slow login page</td><td>Ton</td><td>Not stated</td></tr>
+                    <tr><td>Send the Q3 sales report</td><td>Nuch</td><td>This Friday</td></tr>
+                    <tr><td>Prepare the staff communication plan</td><td>May</td><td>Next week</td></tr>
+                    <tr><td>Talk to the vendor about the slow login page</td><td>Ton</td><td>Not stated</td></tr>
                 </tbody>
               </table>
               <dl class="tool-extra">
-                <div><dt>Decisions</dt><dd>Go-live date moved to 1 Dec.</dd></div>
-                <div><dt>Points to confirm with attendees</dt><dd>The due date for the vendor follow-up, and who owns next year's training budget.</dd></div>
+                  <div><dt>Decisions</dt><dd>Go-live date moved to 1 Dec.</dd></div>
+                  <div><dt>Points to confirm with attendees</dt><dd>The due date for the vendor follow-up, and who owns next year's training budget.</dd></div>
               </dl>
             </div>
           </div>
-          <p class="tool-note">This example was written to show the format. The names and content are invented. Real output depends on the AI tool you use, and a person should always check it before it is passed on.</p>
-          <a class="tool-cta" href="#contact" data-topic="Turn a meeting into action items">We want this for the whole organization, connected to our real systems</a>
-        </div>
+          <p class="tool-note">An invented example to show the format. Real output depends on the AI you use, and a person should always check it before passing it on.</p>
+        </details>
+
+        <a class="tool-cta" href="#contact" data-topic="Turn a meeting into action items">Want this across your organization? Talk to us</a>
       </div>
     </section>
 
@@ -815,10 +814,10 @@
     </div>
   </footer>
 
-  <script src="../config.js"></script>
-  <script src="../main.js"></script>
-  <script src="../calc.js"></script>
-  <script src="../viz.js"></script>
-  <script src="../prompt-tool.js"></script>
+  <script src="../config.js?v=15"></script>
+  <script src="../main.js?v=15"></script>
+  <script src="../calc.js?v=15"></script>
+  <script src="../viz.js?v=15"></script>
+  <script src="../prompt-tool.js?v=15"></script>
 </body>
 </html>
