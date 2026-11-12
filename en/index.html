@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=19">
+  <link rel="stylesheet" href="../styles.css?v=20">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,7 +37,7 @@
       {
         "@type": "Question",
         "name": "Which organizations is this for?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Large enterprises with several business units, where at least one team already uses AI and executives want evidence before investing further. If nobody in your organization uses AI yet, start with basic training first." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Large enterprises where a team already uses AI and executives want evidence before investing further. If nobody uses AI yet, start with training." }
       },
       {
         "@type": "Question",
@@ -47,12 +47,12 @@
       {
         "@type": "Question",
         "name": "How do you work with our IT, information security and compliance teams?",
-        "acceptedAnswer": { "@type": "Answer", "text": "We invite all three from day one, use only the AI tools your organization approves in writing, and test only on sample data with personal data removed." }
+        "acceptedAnswer": { "@type": "Answer", "text": "All three join from day one. We use only the AI tools your organization approves in writing, and test on sample data with personal data removed." }
       },
       {
         "@type": "Question",
         "name": "How much does it cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A fixed price per business unit. We send a quotation after the first discussion, and your organization knows the full price before work starts." }
+        "acceptedAnswer": { "@type": "Answer", "text": "A fixed price per business unit. We send a quotation after the first discussion, before work starts." }
       },
       {
         "@type": "Question",
@@ -62,7 +62,7 @@
       {
         "@type": "Question",
         "name": "What happens after the 10 days?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Your executive committee decides whether to run the pilot. Your organization can run the plan itself, or have Bonio Labs support the pilot and repeat the same method in other business units." }
+        "acceptedAnswer": { "@type": "Answer", "text": "Your executive committee decides whether to run the pilot. You can run it yourselves, or have Bonio Labs support it and extend it to other business units." }
       }
     ]
   }
@@ -135,7 +135,7 @@
         <div class="hero-copy">
           <p class="hero-kicker">AI Transformation Consultant</p>
           <h1>Decide where to invest in AI, with numbers you can audit, in 10 working days</h1>
-          <p class="lead">Bonio Labs is an AI transformation consultant for large enterprises. We help executives choose the work where AI returns the most in each business unit, prove the value with the organization's own data, and plan a 90-day pilot before scaling.</p>
+          <p class="lead">Bonio Labs helps executives of large enterprises choose where to invest in AI, prove the value with their own data, and plan a 90-day pilot.</p>
           <div class="hero-actions">
             <form class="quick-lead" data-source="hero" novalidate>
               <label class="sr-only" for="q-email-hero">Work email</label>
@@ -145,34 +145,59 @@
               </div>
               <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
               <p class="quick-error" role="alert" hidden></p>
-              <p class="quick-note">Just your work email. We will reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
+              <p class="quick-note">Enter your work email. We reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
             </form>
           </div>
           <p class="hero-note"><a class="hero-link" href="#sample">See a sample report</a></p>
         </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="mini-card mini-list">
-          <p class="mini-title">14 tasks found</p>
-          <ul>
-            <li><span>1</span><i style="--w: 100%"></i></li>
-            <li><span>2</span><i style="--w: 86%"></i></li>
-            <li><span>3</span><i style="--w: 74%"></i></li>
-            <li class="dim"><span>4</span><i style="--w: 56%"></i></li>
-            <li class="dim"><span>5</span><i style="--w: 50%"></i></li>
-            <li class="dim"><span>6</span><i style="--w: 44%"></i></li>
-          </ul>
-        </div>
-        <div class="mini-card mini-report">
-          <p class="mini-top"><span class="mini-kind">Business case</span><span class="mini-badge">Sample</span></p>
-          <p class="mini-h">Drafting SME loan application summaries with AI</p>
-          <div class="mini-kpis">
-            <div><b>THB 2.4M</b><span>saved per year</span></div>
-            <div><b>2.4 months</b><span>payback</span></div>
+      <div class="hero-visual" id="solutions">
+        <div class="sol-card light">
+          <p class="sol-card-title">Problems large enterprises run into often</p>
+          <div class="sol-list">
+            <details class="sol" name="sol" open>
+              <summary><span class="sol-num" aria-hidden="true">01</span><span class="sol-head"><span class="sol-title">Too many documents to review in time</span><span class="sol-dept">Operations</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Reads the documents and drafts a summary in the team's own template for staff to check and correct.</dd></div><div><dt>Measured by</dt><dd>Time per document set, and the share of summaries that need edits</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Too many documents to review in time">This sounds like us</a>
+              </div>
+            </details>
+            <details class="sol" name="sol">
+              <summary><span class="sol-num" aria-hidden="true">02</span><span class="sol-head"><span class="sol-title">Customers ask the same questions every day</span><span class="sol-dept">Customer service</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Drafts replies from the handbook and past answers for an agent to approve before sending.</dd></div><div><dt>Measured by</dt><dd>First response time, and cases closed per person</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Customers ask the same questions every day">This sounds like us</a>
+              </div>
+            </details>
+            <details class="sol" name="sol">
+              <summary><span class="sol-num" aria-hidden="true">03</span><span class="sol-head"><span class="sol-title">Nobody can find internal information</span><span class="sol-dept">All departments</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Answers questions from internal documents with the source cited, within the asker's access rights.</dd></div><div><dt>Measured by</dt><dd>Time to find an answer, and questions escalated to experts</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Nobody can find internal information">This sounds like us</a>
+              </div>
+            </details>
+            <details class="sol" name="sol">
+              <summary><span class="sol-num" aria-hidden="true">04</span><span class="sol-head"><span class="sol-title">Recurring reports eat hours every week</span><span class="sol-dept">Finance and planning</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Combines the data, drafts the report and flags unusual figures for the owner to check.</dd></div><div><dt>Measured by</dt><dd>Hours per reporting cycle, and errors found afterwards</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Recurring reports eat hours every week">This sounds like us</a>
+              </div>
+            </details>
+            <details class="sol" name="sol">
+              <summary><span class="sol-num" aria-hidden="true">05</span><span class="sol-head"><span class="sol-title">Meetings end and nothing moves</span><span class="sol-dept">Executives and project teams</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Turns the meeting into tasks with owners and due dates, and records them in the work system.</dd></div><div><dt>Measured by</dt><dd>Share of meeting actions with an owner, and actions done on time</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Meetings end and nothing moves">This sounds like us</a>
+              </div>
+            </details>
+            <details class="sol" name="sol">
+              <summary><span class="sol-num" aria-hidden="true">06</span><span class="sol-head"><span class="sol-title">Documents are checked against rules by hand</span><span class="sol-dept">Compliance and legal</span></span></summary>
+              <div class="sol-body">
+                <dl><div><dt>How AI helps</dt><dd>Compares the document with the requirement list and flags what needs attention for an expert to judge.</dd></div><div><dt>Measured by</dt><dd>Review time per document, and issues caught before approval</dd></div></dl>
+                <a class="sol-link" href="#contact" data-topic="Documents are checked against rules by hand">This sounds like us</a>
+              </div>
+            </details>
           </div>
-          <div class="mini-bars">
-            <span class="mini-bar mini-bar-before">Today 45 min</span>
-            <span class="mini-bar mini-bar-after">With AI 20 min</span>
-          </div>
+          <p class="sol-card-note">General examples, not client results. People still review and decide.</p>
         </div>
       </div>
       </div>
@@ -180,13 +205,13 @@
 
     <section class="outcomes" aria-labelledby="outcomes-title">
       <div class="wrap">
-        <h2 id="outcomes-title">What your executive committee receives after 10 working days</h2>
+        <h2 id="outcomes-title">What you receive after 10 working days</h2>
         <ol class="outcome-list">
           <li><span class="num" aria-hidden="true">01</span><p>One to three areas for AI investment, ranked by return</p></li>
-          <li><span class="num" aria-hidden="true">02</span><p>A business case with the source of every figure</p></li>
+          <li><span class="num" aria-hidden="true">02</span><p>A business case with its sources</p></li>
           <li><span class="num" aria-hidden="true">03</span><p>A measurement framework with today's baseline</p></li>
           <li><span class="num" aria-hidden="true">04</span><p>A 90-day pilot plan with owners and budget</p></li>
-          <li><span class="num" aria-hidden="true">05</span><p>A 60-minute presentation to the executive committee for a decision</p></li>
+          <li><span class="num" aria-hidden="true">05</span><p>A 60-minute presentation to the executive committee</p></li>
         </ol>
         <p class="outcome-note">Fixed price, quoted before work starts.</p>
       </div>
@@ -227,7 +252,7 @@
     <section id="services" class="section dark">
       <div class="wrap">
         <h2>Our AI transformation services</h2>
-        <p class="section-lead">Start with one business unit to get numbers you can audit, then scale across the organization in a structured way.</p>
+        <p class="section-lead">Start with one business unit, then scale across the organization.</p>
         <div class="svc-grid">
           <article class="svc">
             <div class="svc-media">
@@ -245,7 +270,7 @@
               <h3 class="svc-title">AI Use Case<br> &amp; ROI Sprint</h3>
             </div>
             <div class="svc-body">
-              <p>A 10-working-day engagement for one business unit. We interview the people doing the work, rank where AI investment should go, test the top candidate on sample data, and deliver a business case with a pilot plan.</p>
+              <p>A 10-working-day engagement for one business unit. We interview staff, rank where AI investment should go, test the top candidate on sample data, and deliver a business case with a pilot plan.</p>
               <a class="svc-link" href="#contact" data-service="AI Use Case &amp; ROI Sprint">Ask about this service</a>
             </div>
           </article>
@@ -265,7 +290,7 @@
               <h3 class="svc-title">AI<br> Automation</h3>
             </div>
             <div class="svc-body">
-              <p>We set up AI to take on repetitive back-office processes such as summarizing documents, handling requests and producing reports, connected to the systems your organization already runs.</p>
+              <p>AI takes on repetitive back-office work such as summarizing documents, handling requests and producing reports, connected to your existing systems.</p>
               <a class="svc-link" href="#contact" data-service="AI Automation for back-office work">Ask about this service</a>
             </div>
           </article>
@@ -287,7 +312,7 @@
               <h3 class="svc-title">Custom<br> Software</h3>
             </div>
             <div class="svc-body">
-              <p>We design and build systems for processes that off-the-shelf software does not cover, including web apps, back-office systems and software for on-site devices.</p>
+              <p>We build systems for processes that off-the-shelf software does not cover: web apps, back-office systems and software for on-site devices.</p>
               <a class="svc-link" href="#contact" data-service="Custom Software development">Ask about this service</a>
             </div>
           </article>
@@ -295,12 +320,14 @@
       </div>
     </section>
 
-    <section id="process" class="section gray light">
+    <section id="process" class="section gray light has-band">
+      <div class="band">
+        <img class="band-photo" src="../assets/photo-boardroom.jpg" alt="" width="1600" height="1068" loading="lazy" decoding="async">
+        <div class="wrap">
+          <h2>10 working days, <span class="blue">from question to decision</span></h2>
+        </div>
+      </div>
       <div class="wrap">
-        <h2>10 working days, <span class="blue">from question to decision</span></h2>
-        <figure class="photo photo-wide">
-          <img src="../assets/photo-boardroom.jpg" alt="A team meeting around a long table in a conference room with large windows" width="1600" height="1068" loading="lazy" decoding="async">
-        </figure>
         <div class="timeline" role="img" aria-label="Timeline of 10 working days: step 1 takes 1 day, step 2 takes 3 days, step 3 takes 4 days, step 4 takes 2 days">
           <div class="tl-bar">
             <span class="tl-seg" style="--span: 1">01</span>
@@ -318,13 +345,13 @@
             <p class="step-num" aria-hidden="true">01</p>
             <p class="step-day">Day 1</p>
             <h3>Agree on the goal</h3>
-            <p>Define the business unit, the scope and the question your executive committee needs answered, together with an executive sponsor.</p>
+            <p>Define the business unit, the scope and the question to answer, with the project sponsor.</p>
           </li>
           <li>
             <p class="step-num" aria-hidden="true">02</p>
             <p class="step-day">Days 2-4</p>
-            <h3>Interview the people doing the work</h3>
-            <p>We talk to 6-8 people and watch the real workflow to find where AI can help.</p>
+            <h3>Interview staff</h3>
+            <p>We talk to 6-8 people and watch the workflow to find where AI can help.</p>
           </li>
           <li>
             <p class="step-num" aria-hidden="true">03</p>
@@ -339,14 +366,14 @@
             <p>We deliver the business case, the measurement framework and the pilot plan for your executive committee to decide.</p>
           </li>
         </ol>
-        <p class="process-note">Your organization's data enters only the AI tools your IT and compliance teams approve in writing before work starts.</p>
+        <p class="process-note">Your data enters only the AI tools your IT and compliance teams approve in writing.</p>
       </div>
     </section>
 
     <section id="viz" class="section viz" aria-labelledby="viz-title">
       <div class="wrap">
-        <h2 id="viz-title">From dozens of tasks to the 3 where AI pays off most</h2>
-        <p class="section-lead">An illustration of how we screen the work in your unit. We collect every candidate task, score its impact and difficulty, and rank them by value.</p>
+        <h2 id="viz-title">From dozens of tasks to the 3 that pay off most</h2>
+        <p class="section-lead">How we screen the work: collect candidate tasks, score impact and difficulty, and rank by value.</p>
         <div class="viz-stage">
           <canvas id="viz-canvas" role="img" aria-label="Animation: dots standing for 14 tasks flow into an AI core in the centre and come out as a bar chart ranked by value, with the first three bars lighting up"></canvas>
         </div>
@@ -354,7 +381,7 @@
           <li>
             <span class="num" aria-hidden="true">01</span>
             <h3>Work found in your unit</h3>
-            <p>10-20 candidate tasks from interviews and watching the real workflow</p>
+            <p>10-20 tasks from interviews and watching the workflow</p>
           </li>
           <li>
             <span class="num" aria-hidden="true">02</span>
@@ -368,72 +395,6 @@
           </li>
         </ol>
 
-        <div class="viz-examples" id="solutions">
-          <h3 class="viz-examples-title">Examples of tasks that often make the list</h3>
-          <p class="section-lead">Problems large enterprises run into often. Each dot in the picture above is a task like these. In every case people still review and decide. These are general examples, not results from any client.</p>
-        <ol class="sol-grid">
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">01</span><span class="sol-dept">Operations</span></p>
-            <h4>Too many documents to review in time</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>Large volumes of applications or supporting documents have to be read and summarized one set at a time.</dd></div>
-              <div><dt>How AI helps</dt><dd>Reads the documents and drafts a summary in the team's own template for staff to check and correct.</dd></div>
-              <div><dt>Measured by</dt><dd>Time per document set, and the share of summaries that need edits</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Too many documents to review in time">This sounds like us</a>
-          </li>
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">02</span><span class="sol-dept">Customer service</span></p>
-            <h4>Customers ask the same questions every day</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>The team spends most of its time on questions the handbook already answers.</dd></div>
-              <div><dt>How AI helps</dt><dd>Drafts replies from the handbook and past answers for an agent to approve before sending.</dd></div>
-              <div><dt>Measured by</dt><dd>First response time, and cases closed per person</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Customers ask the same questions every day">This sounds like us</a>
-          </li>
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">03</span><span class="sol-dept">All departments</span></p>
-            <h4>Nobody can find internal information</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>Policies, manuals and meeting decisions are scattered, so staff keep asking the same experts.</dd></div>
-              <div><dt>How AI helps</dt><dd>Answers questions from internal documents with the source cited, within the asker's access rights.</dd></div>
-              <div><dt>Measured by</dt><dd>Time to find an answer, and questions escalated to experts</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Nobody can find internal information">This sounds like us</a>
-          </li>
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">04</span><span class="sol-dept">Finance and planning</span></p>
-            <h4>Recurring reports eat hours every week</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>Figures are pulled from several systems and the commentary is rewritten by hand each cycle.</dd></div>
-              <div><dt>How AI helps</dt><dd>Combines the data, drafts the report and flags unusual figures for the owner to check.</dd></div>
-              <div><dt>Measured by</dt><dd>Hours per reporting cycle, and errors found afterwards</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Recurring reports eat hours every week">This sounds like us</a>
-          </li>
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">05</span><span class="sol-dept">Executives and project teams</span></p>
-            <h4>Meetings end and nothing moves</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>Decisions and follow-ups stay in personal notes and never reach the work tracker.</dd></div>
-              <div><dt>How AI helps</dt><dd>Turns the meeting into tasks with owners and due dates, and records them in the work system.</dd></div>
-              <div><dt>Measured by</dt><dd>Share of meeting actions with an owner, and actions done on time</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Meetings end and nothing moves">This sounds like us</a>
-          </li>
-          <li class="sol">
-            <p class="sol-top"><span class="sol-num" aria-hidden="true">06</span><span class="sol-dept">Compliance and legal</span></p>
-            <h4>Documents are checked against rules by hand</h4>
-            <dl>
-              <div><dt>Problem</dt><dd>Contracts or filings are compared with requirements line by line, which is slow and easy to miss.</dd></div>
-              <div><dt>How AI helps</dt><dd>Compares the document with the requirement list and flags what needs attention for an expert to judge.</dd></div>
-              <div><dt>Measured by</dt><dd>Review time per document, and issues caught before approval</dd></div>
-            </dl>
-            <a class="sol-link" href="#contact" data-topic="Documents are checked against rules by hand">This sounds like us</a>
-          </li>
-        </ol>
-        </div>
       </div>
     </section>
 
@@ -518,7 +479,7 @@
               </dl>
             </div>
           </div>
-          <p class="tool-note">An invented example to show the format. Real output depends on the AI you use, and a person should always check it before passing it on.</p>
+          <p class="tool-note">An invented example. Real output depends on the AI you use, and a person should check it before passing it on.</p>
         </details>
 
         <a class="tool-cta" href="#contact" data-topic="Turn a meeting into action items">Want this across your organization? Talk to us</a>
@@ -528,7 +489,7 @@
     <section id="sample" class="section light">
       <div class="wrap">
         <h2>A sample of the report <span class="blue">you will receive</span></h2>
-        <p class="section-lead">The summary page of a business case for one piece of work. The figures below are invented to show the format. In a real engagement, every figure is confirmed by the process owner in your unit before we present it.</p>
+        <p class="section-lead">The summary page of a business case for one task. The figures below are invented. In a real engagement, the process owner confirms every figure before we present it.</p>
 
         <article class="report" aria-label="Sample business case with invented figures">
           <header class="report-head">
@@ -636,7 +597,7 @@
     <section id="calculator" class="section gray light" aria-labelledby="calc-title">
       <div class="wrap">
         <h2 id="calc-title">Try the numbers <span class="blue">for your own work</span></h2>
-        <p class="section-lead">Enter the figures for one task your team repeats every month to see the value of the time AI could save. This is a first estimate from the numbers you enter, and it does not include setup costs.</p>
+        <p class="section-lead">Enter the figures for a task your team repeats every month to see the value of the time AI could save. An estimate, not including setup costs.</p>
 
         <div class="calc">
           <form class="calc-inputs" id="calc-form" novalidate>
@@ -685,7 +646,7 @@
               </div>
               <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
               <p class="quick-error" role="alert" hidden></p>
-              <p class="quick-note">Just your work email. We will reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
+              <p class="quick-note">Enter your work email. We reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
             </form>
           </div>
         </div>
@@ -695,9 +656,9 @@
     <section id="case" class="section dark" aria-labelledby="case-title">
       <div class="wrap case-grid">
         <div class="case-copy">
-          <p class="eyebrow">A solution we use ourselves every day</p>
+          <p class="eyebrow">A solution we use ourselves</p>
           <h2 id="case-title">Bonio Portal: an internal work system where AI works alongside the team</h2>
-          <p class="section-lead">We built Bonio Portal as the company's work hub. It brings plans, documents, customer requests and system status into one place, and we connected it so AI agents can use it directly. This is the same approach we set up for clients in our AI Automation service.</p>
+          <p class="section-lead">Bonio Portal brings the company's plans, documents, customer requests and system status into one place, and AI agents can use it. It is the same approach as our AI Automation service.</p>
           <dl class="case-stats">
             <div>
               <dt>15</dt>
@@ -720,7 +681,7 @@
             </ul>
           </div>
           <div class="case-panel">
-            <h3>What we deliberately keep AI from doing</h3>
+            <h3>What AI is not allowed to do</h3>
             <ul class="cross-list">
               <li>Replying to customers on the team's behalf</li>
               <li>Following instructions hidden inside customer messages</li>
@@ -736,7 +697,7 @@
         <div class="faq">
           <details>
             <summary>Which organizations is this for?</summary>
-            <p>Large enterprises with several business units, where at least one team already uses AI and executives want evidence before investing further. If nobody in your organization uses AI yet, start with basic training first.</p>
+            <p>Large enterprises where a team already uses AI and executives want evidence before investing further. If nobody uses AI yet, start with training.</p>
           </details>
           <details>
             <summary>What does our team need to prepare?</summary>
@@ -744,11 +705,11 @@
           </details>
           <details>
             <summary>How do you work with our IT, information security and compliance teams?</summary>
-            <p>We invite all three from day one, use only the AI tools your organization approves in writing, and test only on sample data with personal data removed.</p>
+            <p>All three join from day one. We use only the AI tools your organization approves in writing, and test on sample data with personal data removed.</p>
           </details>
           <details>
             <summary>How much does it cost?</summary>
-            <p>A fixed price per business unit. We send a quotation after the first discussion, and your organization knows the full price before work starts.</p>
+            <p>A fixed price per business unit. We send a quotation after the first discussion, before work starts.</p>
           </details>
           <details>
             <summary>Does the price include building the system?</summary>
@@ -756,7 +717,7 @@
           </details>
           <details>
             <summary>What happens after the 10 days?</summary>
-            <p>Your executive committee decides whether to run the pilot. Your organization can run the plan itself, or have Bonio Labs support the pilot and repeat the same method in other business units.</p>
+            <p>Your executive committee decides whether to run the pilot. You can run it yourselves, or have Bonio Labs support it and extend it to other business units.</p>
           </details>
         </div>
       </div>
@@ -766,7 +727,7 @@
       <div class="wrap contact-grid">
         <div class="contact-copy">
           <h2>Discuss your organization's priorities with us</h2>
-          <p class="section-lead">Just leave your work email and a Bonio Labs consultant will reply to schedule a 30-minute discussion.</p>
+          <p class="section-lead">A consultant will reply to schedule a 30-minute discussion.</p>
           <ul class="plain-list">
             <li>The first discussion is free.</li>
             <li>If this service is not a fit for your work, we will tell you plainly.</li>
@@ -774,7 +735,7 @@
         </div>
 
         <div class="form-card light">
-          <h3 class="quick-title">Leave your work email and a consultant will reply</h3>
+          <h3 class="quick-title">Leave your work email</h3>
           <form class="quick-lead" data-source="contact" novalidate>
               <label class="sr-only" for="q-email-contact">Work email</label>
               <div class="quick-row">
@@ -788,7 +749,7 @@
               </details>
               <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
               <p class="quick-error" role="alert" hidden></p>
-              <p class="quick-note">Just your work email. We will reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
+              <p class="quick-note">Enter your work email. We reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
             </form>
         </div>
       </div>
@@ -818,10 +779,10 @@
     </div>
   </footer>
 
-  <script src="../config.js?v=19"></script>
-  <script src="../main.js?v=19"></script>
-  <script src="../calc.js?v=19"></script>
-  <script src="../viz.js?v=19"></script>
-  <script src="../prompt-tool.js?v=19"></script>
+  <script src="../config.js?v=20"></script>
+  <script src="../main.js?v=20"></script>
+  <script src="../calc.js?v=20"></script>
+  <script src="../viz.js?v=20"></script>
+  <script src="../prompt-tool.js?v=20"></script>
 </body>
 </html>

@@ -128,43 +128,35 @@ h3 { font-size: 1.15rem; font-weight: var(--heading-weight); }
   content: ""; position: absolute; inset: 0; z-index: 1; background: var(--blue);
   clip-path: polygon(0 0, var(--hero-cut-top) 0, var(--hero-cut-bottom) 100%, 0 100%);
 }
-/* ภาพใน hero: ตัวอย่างรายงานและรายการจัดอันดับ สร้างด้วย HTML ไม่ใช้ภาพถ่ายหรือภาพจาก AI */
+/* ด้านขวาของ hero: ตัวอย่างโจทย์ที่เจอบ่อย 6 ข้อ กดเปิดดูทีละข้อ */
 .hero-visual {
   position: relative; z-index: 2; flex: none;
-  width: min(400px, 34%); margin-top: 64px;
+  width: min(440px, 40%);
   display: var(--hero-visual-display);
 }
-.mini-card { border-radius: var(--radius-card); }
-.mini-list {
-  position: absolute; top: -92px; right: -22px; width: 64%;
-  padding: 16px 18px; background: var(--panel); border: 1px solid var(--panel-line);
-  transform: rotate(4deg);
-}
-.mini-title { font-size: 0.8rem; font-weight: 700; color: var(--muted-on-dark); margin-bottom: 8px; }
-.mini-list li { display: grid; grid-template-columns: 16px 1fr; align-items: center; gap: 8px; padding: 4px 0; }
-.mini-list li span { font-size: 0.75rem; font-weight: 700; }
-.mini-list li i { display: block; height: 9px; width: var(--w); border-radius: 2px; background: var(--blue); }
-.mini-list li.dim span { color: #7a7a7a; }
-.mini-list li.dim i { background: #474747; }
-.mini-report {
-  position: relative; padding: 22px; background: var(--white); color: var(--ink);
-  transform: rotate(-3deg); box-shadow: 0 34px 60px -24px rgba(0, 0, 0, 0.75);
-}
-.mini-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.mini-kind { font-size: 0.78rem; font-weight: 700; color: var(--muted); }
-.mini-badge { background: var(--yellow); color: var(--black); font-size: 0.72rem; font-weight: 700; padding: 2px 10px; border-radius: 5px; }
-.mini-h { margin-top: 8px; font-weight: 700; font-size: 1.02rem; line-height: 1.35; }
-.mini-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
-.mini-kpis b { display: block; font-size: 1.35rem; font-weight: var(--display-weight); line-height: 1.1; color: var(--blue); }
-.mini-kpis span { font-size: 0.78rem; color: var(--muted); }
-.mini-bars { display: grid; gap: 6px; margin-top: 16px; }
-.mini-bar { display: block; padding: 5px 10px; border-radius: 4px; color: var(--white); font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
-.mini-bar-before { background: #6b6b6b; }
-.mini-bar-after { background: var(--blue); width: 62%; }
+.sol-card { background: var(--white); color: var(--ink); border-radius: var(--radius-card); padding: 22px 22px 16px; box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35); }
+.sol-card-title { font-size: 1.05rem; font-weight: var(--heading-weight); line-height: 1.3; }
+.sol-list { margin-top: 12px; border-bottom: 1px solid var(--line); }
+.sol { border-top: 1px solid var(--line); }
+.sol summary { display: flex; align-items: center; gap: 12px; min-height: 52px; padding: 8px 0; cursor: pointer; list-style: none; }
+.sol summary::-webkit-details-marker { display: none; }
+.sol summary::after { content: "+"; flex: none; margin-left: auto; font-size: 1.3rem; line-height: 1; color: var(--muted); }
+.sol[open] summary::after { content: "\2212"; }
+.sol-num { flex: none; width: 30px; font-size: 1.05rem; font-weight: var(--display-weight); line-height: 1; color: var(--blue); }
+.sol-head { display: grid; gap: 1px; min-width: 0; }
+.sol-title { font-weight: 700; line-height: 1.3; }
+.sol-dept { font-size: 0.78rem; color: var(--muted); }
+.sol-body { padding: 0 0 12px 42px; }
+.sol dl { margin: 0; display: grid; gap: 8px; }
+.sol dt { font-size: 0.76rem; font-weight: 700; color: var(--muted); }
+.sol dd { margin: 1px 0 0; font-size: 0.92rem; line-height: 1.5; }
+.sol-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 2px; color: var(--blue); font-weight: 700; text-underline-offset: 5px; }
+.sol-link:hover { text-decoration-thickness: 2px; }
+.sol-card-note { margin-top: 12px; font-size: 0.78rem; color: var(--muted); }
 .hero-grid {
   position: relative; z-index: 2;
-  display: flex; align-items: center; justify-content: space-between; gap: 48px;
-  padding-top: 88px; padding-bottom: 96px; min-height: 600px;
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 48px;
+  padding-top: 80px; padding-bottom: 88px; min-height: 600px;
 }
 .hero-copy { width: 52%; }
 .hero-kicker { font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 700; margin-bottom: 8px; }
@@ -175,11 +167,23 @@ h3 { font-size: 1.15rem; font-weight: var(--heading-weight); }
 .hero-link:hover { text-decoration-thickness: 2px; }
 .hero-note { margin-top: 10px; font-size: 0.92rem; opacity: 0.85; }
 
-/* ภาพถ่ายจริง: ลดความสดของสีเล็กน้อยให้เข้ากับโทนของหน้า */
-.photo { margin: 0; overflow: hidden; border-radius: var(--radius-card); background: var(--black); }
-.photo img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.8) contrast(1.04); }
-.photo-wide { margin-top: 32px; aspect-ratio: 21 / 8; }
-.photo-wide img { object-position: center 72%; }
+/* แถบหัวข้อที่มีภาพถ่ายจริงเป็นพื้นหลัง: น้ำเงินตัดเฉียงกับภาพย้อมมืด แบบเดียวกับ hero */
+.section.has-band { padding-top: 0; }
+.band { position: relative; overflow: hidden; background: #0b0d14; color: var(--white); }
+.band-photo {
+  position: absolute; top: 0; right: 0; z-index: 0;
+  width: 66%; height: 100%; max-width: none;
+  object-fit: cover; object-position: center 62%;
+  filter: saturate(0.55) brightness(0.5) contrast(1.1);
+}
+.band::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; background: var(--blue);
+  clip-path: polygon(0 0, 56% 0, 44% 100%, 0 100%);
+}
+.band .wrap { position: relative; z-index: 2; display: flex; align-items: center; min-height: 300px; padding-top: 56px; padding-bottom: 56px; }
+.band h2 { max-width: 40%; }
+.band h2 .blue { display: block; color: var(--white); }
+.has-band .timeline { margin-top: 56px; }
 .credit { margin-left: 12px; }
 
 /* Outcomes: แถบดำใต้ hero บอกสิ่งที่ได้ 5 อย่าง */
@@ -206,28 +210,6 @@ h3 { font-size: 1.15rem; font-weight: var(--heading-weight); }
 .dark { background: var(--black); color: var(--white); }
 .gray { background: var(--gray); }
 .section-lead { margin-top: 14px; max-width: 40em; color: var(--muted); }
-
-/* ตัวอย่างโจทย์ที่เจอบ่อย: อยู่ใน section ภาพเคลื่อนไหว (พื้นเข้ม) ใต้คำอธิบายสามขั้น */
-.viz-examples { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--panel-line); }
-.viz-examples-title { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
-.sol-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
-.sol {
-  display: flex; flex-direction: column;
-  background: var(--panel); border: 1px solid var(--panel-line); border-radius: var(--radius-card); padding: 24px;
-}
-.sol-top { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
-.sol-num { font-size: 1.5rem; font-weight: var(--display-weight); line-height: 1; }
-.sol-dept { font-size: 0.82rem; font-weight: 700; color: var(--muted-on-dark); text-align: right; }
-.sol h4 { margin: 14px 0 4px; font-size: 1.2rem; font-weight: var(--heading-weight); line-height: 1.3; }
-.sol dl { margin: 10px 0 0; }
-.sol dl > div { padding: 10px 0; border-top: 1px solid var(--panel-line); }
-.sol dt { font-size: 0.8rem; font-weight: 700; color: var(--muted-on-dark); }
-.sol dd { margin: 2px 0 0; font-size: 0.95rem; }
-.sol-link {
-  display: inline-flex; align-items: center; min-height: 44px; margin-top: auto; padding-top: 6px; align-self: flex-start;
-  font-weight: 700; text-underline-offset: 5px;
-}
-.sol-link:hover { text-decoration-thickness: 2px; }
 
 /* Service cards: หัวข้ออังกฤษตัวหนาพิเศษ บนการ์ดดำมีแสงน้ำเงิน */
 .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
@@ -580,8 +562,12 @@ input:focus, select:focus, textarea:focus { outline: 3px solid color-mix(in srgb
   .hero-photo { object-position: 20% center; }
   .hero-grid { flex-direction: column; align-items: stretch; gap: 0; padding-top: 56px; padding-bottom: 56px; min-height: 0; }
   .hero-copy { width: 100%; }
-  .hero-visual { width: min(340px, 78%); margin: 108px auto 0; }
-  .mini-list { background: var(--black); border-color: var(--black); }
+  .hero-visual { width: 100%; max-width: 520px; margin: 40px auto 0; }
+  .band::before { display: none; }
+  .band { background: var(--blue); }
+  .band-photo { top: auto; bottom: 0; left: 0; right: auto; width: 100%; height: 200px; clip-path: polygon(0 28%, 100% 0, 100% 100%, 0 100%); }
+  .band .wrap { align-items: flex-start; min-height: 0; padding-top: 48px; padding-bottom: 232px; }
+  .band h2 { max-width: none; }
   .outcome-list { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 36px; }
   .case-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -589,7 +575,6 @@ input:focus, select:focus, textarea:focus { outline: 3px solid color-mix(in srgb
   .calc { grid-template-columns: 1fr; }
   .report-body { grid-template-columns: 1fr; }
   .svc-grid, .stat-grid { grid-template-columns: 1fr; }
-  .sol-grid { grid-template-columns: 1fr 1fr; }
   .svc-grid { max-width: 560px; }
   .steps { grid-template-columns: 1fr 1fr; }
   .section { padding: calc(var(--section-pad) * 0.73) 0; }
@@ -612,8 +597,6 @@ input:focus, select:focus, textarea:focus { outline: 3px solid color-mix(in srgb
 
 @media (max-width: 600px) {
   .wrap { padding-left: 16px; padding-right: 16px; }
-  .sol-grid { grid-template-columns: 1fr; }
-  .photo-wide { aspect-ratio: 16 / 9; }
   .quick-row { flex-direction: column; }
   .quick-row .btn { width: 100%; }
   .tool-controls, .tool-output, .tool-before, .tool-after { padding: 20px 16px; }
