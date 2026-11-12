@@ -339,4 +339,18 @@
   }
 
   Array.prototype.forEach.call(document.querySelectorAll("form.quick-lead"), initQuickLead);
+
+  // ปุ่ม "ดูรายละเอียด": ย่อข้อความรายละเอียด (.detail) ของ section ไว้ก่อน ให้เห็นแต่ใจความหลัก
+  // ถ้าสคริปต์ไม่ทำงาน ปุ่มจะไม่แสดงและรายละเอียดทั้งหมดยังมองเห็นได้ตามปกติ
+  Array.prototype.forEach.call(document.querySelectorAll("[data-more]"), function (btn) {
+    var section = btn.closest("section");
+    if (!section) return;
+    section.classList.add("is-brief");
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var brief = section.classList.toggle("is-brief");
+      btn.setAttribute("aria-expanded", brief ? "false" : "true");
+      btn.textContent = btn.getAttribute(brief ? "data-open" : "data-close");
+    });
+  });
 })();
