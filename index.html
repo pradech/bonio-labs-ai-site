@@ -433,6 +433,95 @@
       </div>
     </section>
 
+    <section id="tool" class="section gray light" aria-labelledby="tool-title">
+      <div class="wrap">
+        <h2 id="tool-title">ลองเอง <span class="blue">สรุปประชุมเป็นรายการงาน</span></h2>
+        <p class="section-lead">เลือกรูปแบบที่ต้องการ แล้วคัดลอกคำสั่งไปวางในเครื่องมือ AI ที่องค์กรของคุณอนุมัติ พร้อมบันทึกการประชุมของคุณ เว็บนี้ไม่รับและไม่เห็นข้อความการประชุมของคุณ</p>
+
+        <div class="tool">
+          <div class="tool-controls">
+            <fieldset data-key="format" data-mode="single">
+              <legend>1. รูปแบบผลลัพธ์</legend>
+              <div class="chips">
+              <button class="chip" type="button" data-value="table" aria-pressed="true">ตารางรายการงาน</button>
+              <button class="chip" type="button" data-value="email" aria-pressed="false">อีเมลสรุปถึงผู้เข้าประชุม</button>
+              <button class="chip" type="button" data-value="brief" aria-pressed="false">รายงานสั้นถึงผู้บริหาร</button>
+              </div>
+            </fieldset>
+            <fieldset data-key="include" data-mode="multi">
+              <legend>2. สิ่งที่ต้องมี</legend>
+              <div class="chips">
+              <button class="chip" type="button" data-value="owner" aria-pressed="true">เจ้าของงาน</button>
+              <button class="chip" type="button" data-value="due" aria-pressed="true">กำหนดส่ง</button>
+              <button class="chip" type="button" data-value="decisions" aria-pressed="true">มติที่ประชุม</button>
+              <button class="chip" type="button" data-value="open" aria-pressed="false">ประเด็นที่ยังค้าง</button>
+              </div>
+            </fieldset>
+            <fieldset data-key="language" data-mode="single">
+              <legend>3. ภาษาของผลลัพธ์</legend>
+              <div class="chips">
+              <button class="chip" type="button" data-value="th" aria-pressed="true">ไทย</button>
+              <button class="chip" type="button" data-value="en" aria-pressed="false">อังกฤษ</button>
+              </div>
+            </fieldset>
+            <fieldset data-key="tone" data-mode="single">
+              <legend>4. น้ำเสียง</legend>
+              <div class="chips">
+              <button class="chip" type="button" data-value="formal" aria-pressed="true">ทางการ</button>
+              <button class="chip" type="button" data-value="brief" aria-pressed="false">กระชับ</button>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="tool-output">
+            <p class="tool-output-title">คำสั่งพร้อมใช้</p>
+            <pre id="tool-prompt" tabindex="0" aria-label="คำสั่งพร้อมใช้"></pre>
+            <button class="btn btn-white btn-block" type="button" id="tool-copy">คัดลอกคำสั่ง</button>
+            <p class="tool-status" id="tool-status" role="status"></p>
+            <ol class="tool-steps">
+              <li>คัดลอกคำสั่ง</li>
+              <li>วางในเครื่องมือ AI ที่องค์กรของคุณอนุมัติ</li>
+              <li>วางบันทึกการประชุมแทนข้อความในวงเล็บ แล้วส่ง</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="tool-example">
+          <h3>ตัวอย่างก่อนและหลัง</h3>
+          <div class="tool-example-grid">
+            <div class="tool-before">
+              <p class="tool-tag">บันทึกการประชุม</p>
+              <pre>ประชุมทีมโครงการ
+- นุชแจ้งว่ารายงานยอดขายไตรมาส 3 ยังไม่เสร็จ ขอส่งศุกร์นี้
+- ทดสอบระบบใหม่แล้ว หน้าเข้าสู่ระบบช้า ต้นจะไปคุยกับผู้ขายระบบ
+- งบอบรมปีหน้ายังไม่สรุป รอตัวเลขจากฝ่ายบุคคล
+- ตกลงเลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.
+- เมย์รับทำแผนสื่อสารกับพนักงาน ส่งภายในสัปดาห์หน้า</pre>
+            </div>
+            <div class="tool-after">
+              <p class="tool-tag">ผลลัพธ์แบบตารางรายการงาน</p>
+              <table>
+                <thead>
+                  <tr><th scope="col">งานที่ต้องทำ</th><th scope="col">เจ้าของงาน</th><th scope="col">กำหนดส่ง</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>ส่งรายงานยอดขายไตรมาส 3</td><td>นุช</td><td>ศุกร์นี้</td></tr>
+                  <tr><td>ทำแผนสื่อสารกับพนักงาน</td><td>เมย์</td><td>ภายในสัปดาห์หน้า</td></tr>
+                  <tr><td>คุยกับผู้ขายระบบเรื่องหน้าเข้าสู่ระบบช้า</td><td>ต้น</td><td>ไม่ระบุ</td></tr>
+                </tbody>
+              </table>
+              <dl class="tool-extra">
+                <div><dt>มติที่ประชุม</dt><dd>เลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.</dd></div>
+                <div><dt>ข้อที่ควรยืนยันกับผู้เข้าประชุม</dt><dd>กำหนดส่งของงานคุยกับผู้ขายระบบ และผู้รับผิดชอบเรื่องงบอบรมปีหน้า</dd></div>
+              </dl>
+            </div>
+          </div>
+          <p class="tool-note">ตัวอย่างนี้จัดทำขึ้นเพื่อแสดงรูปแบบ ชื่อและเนื้อหาเป็นข้อมูลสมมติ ผลลัพธ์จริงขึ้นกับเครื่องมือ AI ที่คุณใช้ และควรให้คนตรวจก่อนส่งต่อทุกครั้ง</p>
+          <a class="tool-cta" href="#contact" data-topic="สรุปประชุมเป็นรายการงาน">อยากให้ทั้งองค์กรใช้แบบนี้กับระบบงานจริง</a>
+        </div>
+      </div>
+    </section>
+
     <section id="sample" class="section light">
       <div class="wrap">
         <h2>ตัวอย่างรายงาน <span class="blue">ที่คุณจะได้รับ</span></h2>
@@ -730,5 +819,6 @@
   <script src="main.js"></script>
   <script src="calc.js"></script>
   <script src="viz.js"></script>
+  <script src="prompt-tool.js"></script>
 </body>
 </html>
