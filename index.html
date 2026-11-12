@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=21">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -129,77 +129,174 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" data-slides>
       <img class="hero-photo" src="assets/photo-glass-room.jpg" alt="" width="1600" height="1067" fetchpriority="high">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="hero-kicker">AI Transformation Consultant</p>
-          <h1>ตัดสินใจลงทุน AI ด้วยตัวเลขที่ตรวจสอบได้ ภายใน 10 วันทำการ</h1>
-          <p class="lead">Bonio Labs ช่วยผู้บริหารองค์กรขนาดใหญ่เลือกงานที่ควรลงทุน AI พิสูจน์ความคุ้มค่าด้วยข้อมูลขององค์กร และวางแผนโครงการนำร่อง (pilot) 90 วัน</p>
-          <div class="hero-actions">
-            <form class="quick-lead" data-source="hero" novalidate>
-              <label class="sr-only" for="q-email-hero">อีเมลที่ทำงาน</label>
-              <div class="quick-row">
-                <input id="q-email-hero" name="email" type="email" autocomplete="email" inputmode="email" placeholder="อีเมลที่ทำงานของคุณ" required>
-                <button class="btn btn-dark" type="submit">นัดหารือ 30 นาที</button>
+      <div class="hero-slides" role="group" aria-roledescription="carousel" aria-label="สไลด์แนะนำ">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="1 / 2: ภาพรวม">
+          <div class="wrap hero-grid">
+            <div class="hero-copy">
+              <p class="hero-kicker">AI Transformation Consultant</p>
+              <h1>ตัดสินใจลงทุน AI ด้วยตัวเลขที่ตรวจสอบได้ ภายใน 10 วันทำการ</h1>
+              <p class="lead">Bonio Labs ช่วยผู้บริหารองค์กรขนาดใหญ่เลือกงานที่ควรลงทุน AI พิสูจน์ความคุ้มค่าด้วยข้อมูลขององค์กร และวางแผนโครงการนำร่อง (pilot) 90 วัน</p>
+              <div class="hero-actions">
+                <form class="quick-lead" data-source="hero" novalidate>
+                  <label class="sr-only" for="q-email-hero">อีเมลที่ทำงาน</label>
+                  <div class="quick-row">
+                    <input id="q-email-hero" name="email" type="email" autocomplete="email" inputmode="email" placeholder="อีเมลที่ทำงานของคุณ" required>
+                    <button class="btn btn-dark" type="submit">นัดหารือ 30 นาที</button>
+                  </div>
+                  <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
+                  <p class="quick-error" role="alert" hidden></p>
+                  <p class="quick-note">กรอกอีเมลที่ทำงาน เราติดต่อกลับเพื่อนัดหารือ 30 นาที ไม่มีค่าใช้จ่าย การส่งถือว่ายินยอมให้ติดต่อกลับตาม <a href="#privacy">นโยบายความเป็นส่วนตัว</a></p>
+                </form>
               </div>
-              <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <p class="quick-error" role="alert" hidden></p>
-              <p class="quick-note">กรอกอีเมลที่ทำงาน เราติดต่อกลับเพื่อนัดหารือ 30 นาที ไม่มีค่าใช้จ่าย การส่งถือว่ายินยอมให้ติดต่อกลับตาม <a href="#privacy">นโยบายความเป็นส่วนตัว</a></p>
-            </form>
+              <p class="hero-note"><a class="hero-link" href="#sample">ดูตัวอย่างรายงาน</a></p>
+            </div>
+          <div class="hero-visual" id="solutions">
+            <div class="sol-card light">
+              <p class="sol-card-title">โจทย์ที่เจอบ่อย</p>
+              <div class="sol-list">
+                <details class="sol" name="sol" open>
+                  <summary><span class="sol-num" aria-hidden="true">01</span><span class="sol-head"><span class="sol-title">เอกสารเข้ามามาก ตรวจไม่ทัน</span><span class="sol-dept">ฝ่ายปฏิบัติการ</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>อ่านเอกสารและร่างสรุปตามแบบฟอร์มของทีม ให้เจ้าหน้าที่ตรวจและแก้</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาต่อชุดเอกสาร และสัดส่วนสรุปที่ต้องแก้</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="เอกสารเข้ามามาก ตรวจไม่ทัน">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">02</span><span class="sol-head"><span class="sol-title">ลูกค้าถามคำถามเดิมซ้ำทุกวัน</span><span class="sol-dept">บริการลูกค้า</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>ร่างคำตอบจากคู่มือและประวัติการตอบ ให้พนักงานอนุมัติก่อนส่ง</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาตอบกลับครั้งแรก และจำนวนเรื่องที่ปิดได้ต่อคน</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="ลูกค้าถามคำถามเดิมซ้ำทุกวัน">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">03</span><span class="sol-head"><span class="sol-title">หาข้อมูลภายในไม่เจอ</span><span class="sol-dept">ทุกฝ่าย</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>ตอบคำถามจากเอกสารภายในพร้อมระบุแหล่งที่มา ตามสิทธิ์ของผู้ถาม</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาที่ใช้หาคำตอบ และจำนวนคำถามที่ส่งถึงผู้เชี่ยวชาญ</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="หาข้อมูลภายในไม่เจอ">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">04</span><span class="sol-head"><span class="sol-title">รายงานประจำกินเวลาทุกสัปดาห์</span><span class="sol-dept">การเงินและวางแผน</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>รวมข้อมูล ร่างรายงาน และชี้จุดที่ตัวเลขผิดปกติ ให้ผู้รับผิดชอบตรวจ</dd></div><div><dt>วัดผลด้วย</dt><dd>ชั่วโมงที่ใช้ต่อรอบรายงาน และจำนวนข้อผิดพลาดที่พบภายหลัง</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="รายงานประจำกินเวลาทุกสัปดาห์">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">05</span><span class="sol-head"><span class="sol-title">ประชุมจบแล้วงานไม่เดิน</span><span class="sol-dept">ผู้บริหารและทีมโครงการ</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>สรุปประชุมเป็นรายการงานพร้อมเจ้าของและกำหนดส่ง แล้วบันทึกเข้าระบบงาน</dd></div><div><dt>วัดผลด้วย</dt><dd>สัดส่วนงานจากที่ประชุมที่มีเจ้าของ และงานที่เสร็จตามกำหนด</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="ประชุมจบแล้วงานไม่เดิน">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">06</span><span class="sol-head"><span class="sol-title">ตรวจเอกสารกับกฎเกณฑ์ด้วยมือ</span><span class="sol-dept">กำกับดูแลและกฎหมาย</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>AI ช่วยอย่างไร</dt><dd>เทียบเอกสารกับรายการข้อกำหนดและชี้จุดที่ต้องดู ให้ผู้เชี่ยวชาญตัดสิน</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาตรวจต่อฉบับ และจำนวนประเด็นที่ตรวจพบก่อนอนุมัติ</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="ตรวจเอกสารกับกฎเกณฑ์ด้วยมือ">โจทย์นี้ตรงกับเรา</a>
+                  </div>
+                </details>
+              </div>
+              <p class="sol-card-note">ตัวอย่างทั่วไป ไม่ใช่ผลงานลูกค้า คนยังเป็นผู้ตรวจและตัดสินใจ</p>
+            </div>
           </div>
-          <p class="hero-note"><a class="hero-link" href="#sample">ดูตัวอย่างรายงาน</a></p>
+          </div>
         </div>
-      <div class="hero-visual" id="solutions">
-        <div class="sol-card light">
-          <p class="sol-card-title">โจทย์ที่เจอบ่อย</p>
-          <div class="sol-list">
-            <details class="sol" name="sol" open>
-              <summary><span class="sol-num" aria-hidden="true">01</span><span class="sol-head"><span class="sol-title">เอกสารเข้ามามาก ตรวจไม่ทัน</span><span class="sol-dept">ฝ่ายปฏิบัติการ</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>อ่านเอกสารและร่างสรุปตามแบบฟอร์มของทีม ให้เจ้าหน้าที่ตรวจและแก้</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาต่อชุดเอกสาร และสัดส่วนสรุปที่ต้องแก้</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="เอกสารเข้ามามาก ตรวจไม่ทัน">โจทย์นี้ตรงกับเรา</a>
+        <div class="hero-slide hero-tool" id="tool" role="group" aria-roledescription="slide" aria-label="2 / 2: ลองเครื่องมือ" hidden>
+          <div class="wrap">
+            <h2 id="tool-title">ลองเลย <span class="blue">เปลี่ยนโน้ตประชุมเป็นรายการงาน</span></h2>
+            <p class="section-lead">เลือกแบบที่ต้องการ แล้วคัดลอกคำสั่งไปใช้กับ AI ที่องค์กรอนุญาต เราไม่เห็นโน้ตประชุมของคุณ</p>
+
+            <div class="tool">
+              <div class="tool-controls light">
+                  <fieldset data-key="format" data-mode="single">
+                    <legend>อยากได้แบบไหน</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="table" aria-pressed="true">ตารางงาน</button>
+                    <button class="chip" type="button" data-value="email" aria-pressed="false">อีเมลสรุป</button>
+                    <button class="chip" type="button" data-value="brief" aria-pressed="false">สรุปสั้นถึงผู้บริหาร</button>
+                    </div>
+                  </fieldset>
+                  <fieldset data-key="include" data-mode="multi">
+                    <legend>ให้มีอะไรบ้าง</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="owner" aria-pressed="true">ใครทำ</button>
+                    <button class="chip" type="button" data-value="due" aria-pressed="true">ส่งเมื่อไร</button>
+                    <button class="chip" type="button" data-value="decisions" aria-pressed="true">มติที่ประชุม</button>
+                    <button class="chip" type="button" data-value="open" aria-pressed="false">เรื่องที่ยังค้าง</button>
+                    </div>
+                  </fieldset>
+                <div class="tool-row">
+                  <fieldset data-key="language" data-mode="single">
+                    <legend>ภาษา</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="th" aria-pressed="true">ไทย</button>
+                    <button class="chip" type="button" data-value="en" aria-pressed="false">อังกฤษ</button>
+                    </div>
+                  </fieldset>
+                  <fieldset data-key="tone" data-mode="single">
+                    <legend>โทน</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="formal" aria-pressed="true">ทางการ</button>
+                    <button class="chip" type="button" data-value="brief" aria-pressed="false">กระชับ</button>
+                    </div>
+                  </fieldset>
+                </div>
               </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">02</span><span class="sol-head"><span class="sol-title">ลูกค้าถามคำถามเดิมซ้ำทุกวัน</span><span class="sol-dept">บริการลูกค้า</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>ร่างคำตอบจากคู่มือและประวัติการตอบ ให้พนักงานอนุมัติก่อนส่ง</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาตอบกลับครั้งแรก และจำนวนเรื่องที่ปิดได้ต่อคน</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="ลูกค้าถามคำถามเดิมซ้ำทุกวัน">โจทย์นี้ตรงกับเรา</a>
+
+              <div class="tool-output">
+                <p class="tool-output-title">คำสั่งของคุณ</p>
+                <pre id="tool-prompt" tabindex="0" aria-label="คำสั่งของคุณ"></pre>
+                <button class="btn btn-white btn-block" type="button" id="tool-copy">คัดลอกคำสั่ง</button>
+                <p class="tool-status" id="tool-status" role="status"></p>
+                <p class="tool-how">วางใน AI ที่องค์กรอนุญาต แล้วแปะโน้ตประชุมแทนข้อความในวงเล็บ</p>
               </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">03</span><span class="sol-head"><span class="sol-title">หาข้อมูลภายในไม่เจอ</span><span class="sol-dept">ทุกฝ่าย</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>ตอบคำถามจากเอกสารภายในพร้อมระบุแหล่งที่มา ตามสิทธิ์ของผู้ถาม</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาที่ใช้หาคำตอบ และจำนวนคำถามที่ส่งถึงผู้เชี่ยวชาญ</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="หาข้อมูลภายในไม่เจอ">โจทย์นี้ตรงกับเรา</a>
+            </div>
+
+            <details class="tool-example">
+              <summary>ดูตัวอย่างก่อนและหลัง</summary>
+              <div class="tool-example-grid light">
+                <div class="tool-before">
+                  <p class="tool-tag">โน้ตประชุม</p>
+                  <pre>ประชุมทีมโครงการ
+    - นุชแจ้งว่ารายงานยอดขายไตรมาส 3 ยังไม่เสร็จ ขอส่งศุกร์นี้
+    - ทดสอบระบบใหม่แล้ว หน้าเข้าสู่ระบบช้า ต้นจะไปคุยกับผู้ขายระบบ
+    - งบอบรมปีหน้ายังไม่สรุป รอตัวเลขจากฝ่ายบุคคล
+    - ตกลงเลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.
+    - เมย์รับทำแผนสื่อสารกับพนักงาน ส่งภายในสัปดาห์หน้า</pre>
+                </div>
+                <div class="tool-after">
+                  <p class="tool-tag">ผลลัพธ์แบบตารางงาน</p>
+                  <table>
+                    <thead>
+                      <tr><th scope="col">งานที่ต้องทำ</th><th scope="col">ใครทำ</th><th scope="col">ส่งเมื่อไร</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ส่งรายงานยอดขายไตรมาส 3</td><td>นุช</td><td>ศุกร์นี้</td></tr>
+                        <tr><td>ทำแผนสื่อสารกับพนักงาน</td><td>เมย์</td><td>ภายในสัปดาห์หน้า</td></tr>
+                        <tr><td>คุยกับผู้ขายระบบเรื่องหน้าเข้าสู่ระบบช้า</td><td>ต้น</td><td>ไม่ระบุ</td></tr>
+                    </tbody>
+                  </table>
+                  <dl class="tool-extra">
+                      <div><dt>มติที่ประชุม</dt><dd>เลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.</dd></div>
+                      <div><dt>ข้อที่ควรยืนยันกับผู้เข้าประชุม</dt><dd>กำหนดส่งของงานคุยกับผู้ขายระบบ และผู้รับผิดชอบเรื่องงบอบรมปีหน้า</dd></div>
+                  </dl>
+                </div>
               </div>
+              <p class="tool-note">ตัวอย่างสมมติ ผลจริงขึ้นกับ AI ที่ใช้ ควรให้คนตรวจก่อนส่งต่อ</p>
             </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">04</span><span class="sol-head"><span class="sol-title">รายงานประจำกินเวลาทุกสัปดาห์</span><span class="sol-dept">การเงินและวางแผน</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>รวมข้อมูล ร่างรายงาน และชี้จุดที่ตัวเลขผิดปกติ ให้ผู้รับผิดชอบตรวจ</dd></div><div><dt>วัดผลด้วย</dt><dd>ชั่วโมงที่ใช้ต่อรอบรายงาน และจำนวนข้อผิดพลาดที่พบภายหลัง</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="รายงานประจำกินเวลาทุกสัปดาห์">โจทย์นี้ตรงกับเรา</a>
-              </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">05</span><span class="sol-head"><span class="sol-title">ประชุมจบแล้วงานไม่เดิน</span><span class="sol-dept">ผู้บริหารและทีมโครงการ</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>สรุปประชุมเป็นรายการงานพร้อมเจ้าของและกำหนดส่ง แล้วบันทึกเข้าระบบงาน</dd></div><div><dt>วัดผลด้วย</dt><dd>สัดส่วนงานจากที่ประชุมที่มีเจ้าของ และงานที่เสร็จตามกำหนด</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="ประชุมจบแล้วงานไม่เดิน">โจทย์นี้ตรงกับเรา</a>
-              </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">06</span><span class="sol-head"><span class="sol-title">ตรวจเอกสารกับกฎเกณฑ์ด้วยมือ</span><span class="sol-dept">กำกับดูแลและกฎหมาย</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>AI ช่วยอย่างไร</dt><dd>เทียบเอกสารกับรายการข้อกำหนดและชี้จุดที่ต้องดู ให้ผู้เชี่ยวชาญตัดสิน</dd></div><div><dt>วัดผลด้วย</dt><dd>เวลาตรวจต่อฉบับ และจำนวนประเด็นที่ตรวจพบก่อนอนุมัติ</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="ตรวจเอกสารกับกฎเกณฑ์ด้วยมือ">โจทย์นี้ตรงกับเรา</a>
-              </div>
-            </details>
+
+            <a class="tool-cta" href="#contact" data-topic="สรุปประชุมเป็นรายการงาน">อยากให้ทั้งองค์กรใช้แบบนี้ คุยกับเรา</a>
           </div>
-          <p class="sol-card-note">ตัวอย่างทั่วไป ไม่ใช่ผลงานลูกค้า คนยังเป็นผู้ตรวจและตัดสินใจ</p>
         </div>
       </div>
+      <div class="wrap hero-nav" role="group" aria-label="เลือกสไลด์" hidden>
+        <button class="hero-arrow" type="button" data-slide-prev aria-label="สไลด์ก่อนหน้า"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="hero-tab" type="button" data-slide-to="0" aria-pressed="true"><span aria-hidden="true">01</span>ภาพรวม</button>
+        <button class="hero-tab" type="button" data-slide-to="1" aria-pressed="false"><span aria-hidden="true">02</span>ลองเครื่องมือ</button>
+        <button class="hero-arrow" type="button" data-slide-next aria-label="สไลด์ถัดไป"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </section>
 
@@ -398,93 +495,6 @@
       </div>
     </section>
 
-    <section id="tool" class="section gray light" aria-labelledby="tool-title">
-      <div class="wrap">
-        <h2 id="tool-title">ลองเลย <span class="blue">เปลี่ยนโน้ตประชุมเป็นรายการงาน</span></h2>
-        <p class="section-lead">เลือกแบบที่ต้องการ แล้วคัดลอกคำสั่งไปใช้กับ AI ที่องค์กรอนุญาต เราไม่เห็นโน้ตประชุมของคุณ</p>
-
-        <div class="tool">
-          <div class="tool-controls">
-              <fieldset data-key="format" data-mode="single">
-                <legend>อยากได้แบบไหน</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="table" aria-pressed="true">ตารางงาน</button>
-                <button class="chip" type="button" data-value="email" aria-pressed="false">อีเมลสรุป</button>
-                <button class="chip" type="button" data-value="brief" aria-pressed="false">สรุปสั้นถึงผู้บริหาร</button>
-                </div>
-              </fieldset>
-              <fieldset data-key="include" data-mode="multi">
-                <legend>ให้มีอะไรบ้าง</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="owner" aria-pressed="true">ใครทำ</button>
-                <button class="chip" type="button" data-value="due" aria-pressed="true">ส่งเมื่อไร</button>
-                <button class="chip" type="button" data-value="decisions" aria-pressed="true">มติที่ประชุม</button>
-                <button class="chip" type="button" data-value="open" aria-pressed="false">เรื่องที่ยังค้าง</button>
-                </div>
-              </fieldset>
-            <div class="tool-row">
-              <fieldset data-key="language" data-mode="single">
-                <legend>ภาษา</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="th" aria-pressed="true">ไทย</button>
-                <button class="chip" type="button" data-value="en" aria-pressed="false">อังกฤษ</button>
-                </div>
-              </fieldset>
-              <fieldset data-key="tone" data-mode="single">
-                <legend>โทน</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="formal" aria-pressed="true">ทางการ</button>
-                <button class="chip" type="button" data-value="brief" aria-pressed="false">กระชับ</button>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-
-          <div class="tool-output">
-            <p class="tool-output-title">คำสั่งของคุณ</p>
-            <pre id="tool-prompt" tabindex="0" aria-label="คำสั่งของคุณ"></pre>
-            <button class="btn btn-white btn-block" type="button" id="tool-copy">คัดลอกคำสั่ง</button>
-            <p class="tool-status" id="tool-status" role="status"></p>
-            <p class="tool-how">วางใน AI ที่องค์กรอนุญาต แล้วแปะโน้ตประชุมแทนข้อความในวงเล็บ</p>
-          </div>
-        </div>
-
-        <details class="tool-example">
-          <summary>ดูตัวอย่างก่อนและหลัง</summary>
-          <div class="tool-example-grid">
-            <div class="tool-before">
-              <p class="tool-tag">โน้ตประชุม</p>
-              <pre>ประชุมทีมโครงการ
-- นุชแจ้งว่ารายงานยอดขายไตรมาส 3 ยังไม่เสร็จ ขอส่งศุกร์นี้
-- ทดสอบระบบใหม่แล้ว หน้าเข้าสู่ระบบช้า ต้นจะไปคุยกับผู้ขายระบบ
-- งบอบรมปีหน้ายังไม่สรุป รอตัวเลขจากฝ่ายบุคคล
-- ตกลงเลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.
-- เมย์รับทำแผนสื่อสารกับพนักงาน ส่งภายในสัปดาห์หน้า</pre>
-            </div>
-            <div class="tool-after">
-              <p class="tool-tag">ผลลัพธ์แบบตารางงาน</p>
-              <table>
-                <thead>
-                  <tr><th scope="col">งานที่ต้องทำ</th><th scope="col">ใครทำ</th><th scope="col">ส่งเมื่อไร</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>ส่งรายงานยอดขายไตรมาส 3</td><td>นุช</td><td>ศุกร์นี้</td></tr>
-                    <tr><td>ทำแผนสื่อสารกับพนักงาน</td><td>เมย์</td><td>ภายในสัปดาห์หน้า</td></tr>
-                    <tr><td>คุยกับผู้ขายระบบเรื่องหน้าเข้าสู่ระบบช้า</td><td>ต้น</td><td>ไม่ระบุ</td></tr>
-                </tbody>
-              </table>
-              <dl class="tool-extra">
-                  <div><dt>มติที่ประชุม</dt><dd>เลื่อนวันเปิดใช้ระบบเป็น 1 ธ.ค.</dd></div>
-                  <div><dt>ข้อที่ควรยืนยันกับผู้เข้าประชุม</dt><dd>กำหนดส่งของงานคุยกับผู้ขายระบบ และผู้รับผิดชอบเรื่องงบอบรมปีหน้า</dd></div>
-              </dl>
-            </div>
-          </div>
-          <p class="tool-note">ตัวอย่างสมมติ ผลจริงขึ้นกับ AI ที่ใช้ ควรให้คนตรวจก่อนส่งต่อ</p>
-        </details>
-
-        <a class="tool-cta" href="#contact" data-topic="สรุปประชุมเป็นรายการงาน">อยากให้ทั้งองค์กรใช้แบบนี้ คุยกับเรา</a>
-      </div>
-    </section>
 
     <section id="sample" class="section light">
       <div class="wrap">
@@ -779,10 +789,11 @@
     </div>
   </footer>
 
-  <script src="config.js?v=20"></script>
-  <script src="main.js?v=20"></script>
-  <script src="calc.js?v=20"></script>
-  <script src="viz.js?v=20"></script>
-  <script src="prompt-tool.js?v=20"></script>
+  <script src="config.js?v=21"></script>
+  <script src="main.js?v=21"></script>
+  <script src="calc.js?v=21"></script>
+  <script src="viz.js?v=21"></script>
+  <script src="prompt-tool.js?v=21"></script>
+  <script src="slides.js?v=21"></script>
 </body>
 </html>

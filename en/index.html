@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=20">
+  <link rel="stylesheet" href="../styles.css?v=21">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -129,77 +129,174 @@
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" data-slides>
       <img class="hero-photo" src="../assets/photo-glass-room.jpg" alt="" width="1600" height="1067" fetchpriority="high">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="hero-kicker">AI Transformation Consultant</p>
-          <h1>Decide where to invest in AI, with numbers you can audit, in 10 working days</h1>
-          <p class="lead">Bonio Labs helps executives of large enterprises choose where to invest in AI, prove the value with their own data, and plan a 90-day pilot.</p>
-          <div class="hero-actions">
-            <form class="quick-lead" data-source="hero" novalidate>
-              <label class="sr-only" for="q-email-hero">Work email</label>
-              <div class="quick-row">
-                <input id="q-email-hero" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Your work email" required>
-                <button class="btn btn-dark" type="submit">Book a 30-minute discussion</button>
+      <div class="hero-slides" role="group" aria-roledescription="carousel" aria-label="Intro slides">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="1 / 2: Overview">
+          <div class="wrap hero-grid">
+            <div class="hero-copy">
+              <p class="hero-kicker">AI Transformation Consultant</p>
+              <h1>Decide where to invest in AI, with numbers you can audit, in 10 working days</h1>
+              <p class="lead">Bonio Labs helps executives of large enterprises choose where to invest in AI, prove the value with their own data, and plan a 90-day pilot.</p>
+              <div class="hero-actions">
+                <form class="quick-lead" data-source="hero" novalidate>
+                  <label class="sr-only" for="q-email-hero">Work email</label>
+                  <div class="quick-row">
+                    <input id="q-email-hero" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Your work email" required>
+                    <button class="btn btn-dark" type="submit">Book a 30-minute discussion</button>
+                  </div>
+                  <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
+                  <p class="quick-error" role="alert" hidden></p>
+                  <p class="quick-note">Enter your work email. We reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
+                </form>
               </div>
-              <input class="quick-hp" name="botcheck" type="checkbox" tabindex="-1" autocomplete="off" aria-hidden="true">
-              <p class="quick-error" role="alert" hidden></p>
-              <p class="quick-note">Enter your work email. We reply to schedule a free 30-minute discussion. By sending you agree to be contacted under our <a href="#privacy">privacy policy</a></p>
-            </form>
+              <p class="hero-note"><a class="hero-link" href="#sample">See a sample report</a></p>
+            </div>
+          <div class="hero-visual" id="solutions">
+            <div class="sol-card light">
+              <p class="sol-card-title">Common problems</p>
+              <div class="sol-list">
+                <details class="sol" name="sol" open>
+                  <summary><span class="sol-num" aria-hidden="true">01</span><span class="sol-head"><span class="sol-title">Too many documents to review in time</span><span class="sol-dept">Operations</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Reads the documents and drafts a summary in the team's own template for staff to check and correct.</dd></div><div><dt>Measured by</dt><dd>Time per document set, and the share of summaries that need edits</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Too many documents to review in time">This sounds like us</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">02</span><span class="sol-head"><span class="sol-title">Customers ask the same questions every day</span><span class="sol-dept">Customer service</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Drafts replies from the handbook and past answers for an agent to approve before sending.</dd></div><div><dt>Measured by</dt><dd>First response time, and cases closed per person</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Customers ask the same questions every day">This sounds like us</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">03</span><span class="sol-head"><span class="sol-title">Nobody can find internal information</span><span class="sol-dept">All departments</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Answers questions from internal documents with the source cited, within the asker's access rights.</dd></div><div><dt>Measured by</dt><dd>Time to find an answer, and questions escalated to experts</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Nobody can find internal information">This sounds like us</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">04</span><span class="sol-head"><span class="sol-title">Recurring reports eat hours every week</span><span class="sol-dept">Finance and planning</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Combines the data, drafts the report and flags unusual figures for the owner to check.</dd></div><div><dt>Measured by</dt><dd>Hours per reporting cycle, and errors found afterwards</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Recurring reports eat hours every week">This sounds like us</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">05</span><span class="sol-head"><span class="sol-title">Meetings end and nothing moves</span><span class="sol-dept">Executives and project teams</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Turns the meeting into tasks with owners and due dates, and records them in the work system.</dd></div><div><dt>Measured by</dt><dd>Share of meeting actions with an owner, and actions done on time</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Meetings end and nothing moves">This sounds like us</a>
+                  </div>
+                </details>
+                <details class="sol" name="sol">
+                  <summary><span class="sol-num" aria-hidden="true">06</span><span class="sol-head"><span class="sol-title">Documents are checked against rules by hand</span><span class="sol-dept">Compliance and legal</span></span></summary>
+                  <div class="sol-body">
+                    <dl><div><dt>How AI helps</dt><dd>Compares the document with the requirement list and flags what needs attention for an expert to judge.</dd></div><div><dt>Measured by</dt><dd>Review time per document, and issues caught before approval</dd></div></dl>
+                    <a class="sol-link" href="#contact" data-topic="Documents are checked against rules by hand">This sounds like us</a>
+                  </div>
+                </details>
+              </div>
+              <p class="sol-card-note">General examples, not client results. People still review and decide.</p>
+            </div>
           </div>
-          <p class="hero-note"><a class="hero-link" href="#sample">See a sample report</a></p>
+          </div>
         </div>
-      <div class="hero-visual" id="solutions">
-        <div class="sol-card light">
-          <p class="sol-card-title">Common problems</p>
-          <div class="sol-list">
-            <details class="sol" name="sol" open>
-              <summary><span class="sol-num" aria-hidden="true">01</span><span class="sol-head"><span class="sol-title">Too many documents to review in time</span><span class="sol-dept">Operations</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Reads the documents and drafts a summary in the team's own template for staff to check and correct.</dd></div><div><dt>Measured by</dt><dd>Time per document set, and the share of summaries that need edits</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Too many documents to review in time">This sounds like us</a>
+        <div class="hero-slide hero-tool" id="tool" role="group" aria-roledescription="slide" aria-label="2 / 2: Try the tool" hidden>
+          <div class="wrap">
+            <h2 id="tool-title">Try it: <span class="blue">turn meeting notes into action items</span></h2>
+            <p class="section-lead">Tap what you want, then copy the prompt into the AI tool your organization allows. We never see your meeting notes.</p>
+
+            <div class="tool">
+              <div class="tool-controls light">
+                  <fieldset data-key="format" data-mode="single">
+                    <legend>Pick a format</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="table" aria-pressed="true">Action table</button>
+                    <button class="chip" type="button" data-value="email" aria-pressed="false">Summary email</button>
+                    <button class="chip" type="button" data-value="brief" aria-pressed="false">Executive brief</button>
+                    </div>
+                  </fieldset>
+                  <fieldset data-key="include" data-mode="multi">
+                    <legend>Include</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="owner" aria-pressed="true">Who</button>
+                    <button class="chip" type="button" data-value="due" aria-pressed="true">When</button>
+                    <button class="chip" type="button" data-value="decisions" aria-pressed="true">Decisions</button>
+                    <button class="chip" type="button" data-value="open" aria-pressed="false">Open issues</button>
+                    </div>
+                  </fieldset>
+                <div class="tool-row">
+                  <fieldset data-key="language" data-mode="single">
+                    <legend>Language</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="th" aria-pressed="false">Thai</button>
+                    <button class="chip" type="button" data-value="en" aria-pressed="true">English</button>
+                    </div>
+                  </fieldset>
+                  <fieldset data-key="tone" data-mode="single">
+                    <legend>Tone</legend>
+                    <div class="chips">
+                    <button class="chip" type="button" data-value="formal" aria-pressed="true">Formal</button>
+                    <button class="chip" type="button" data-value="brief" aria-pressed="false">Brief</button>
+                    </div>
+                  </fieldset>
+                </div>
               </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">02</span><span class="sol-head"><span class="sol-title">Customers ask the same questions every day</span><span class="sol-dept">Customer service</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Drafts replies from the handbook and past answers for an agent to approve before sending.</dd></div><div><dt>Measured by</dt><dd>First response time, and cases closed per person</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Customers ask the same questions every day">This sounds like us</a>
+
+              <div class="tool-output">
+                <p class="tool-output-title">Your prompt</p>
+                <pre id="tool-prompt" tabindex="0" aria-label="Your prompt"></pre>
+                <button class="btn btn-white btn-block" type="button" id="tool-copy">Copy the prompt</button>
+                <p class="tool-status" id="tool-status" role="status"></p>
+                <p class="tool-how">Paste it into the AI tool your organization allows, then swap the bracketed text for your notes.</p>
               </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">03</span><span class="sol-head"><span class="sol-title">Nobody can find internal information</span><span class="sol-dept">All departments</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Answers questions from internal documents with the source cited, within the asker's access rights.</dd></div><div><dt>Measured by</dt><dd>Time to find an answer, and questions escalated to experts</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Nobody can find internal information">This sounds like us</a>
+            </div>
+
+            <details class="tool-example">
+              <summary>See a before and after example</summary>
+              <div class="tool-example-grid light">
+                <div class="tool-before">
+                  <p class="tool-tag">Meeting notes</p>
+                  <pre>Project team meeting
+    - Nuch says the Q3 sales report is not finished, will send it this Friday
+    - New system tested, the login page is slow, Ton will talk to the vendor
+    - Next year's training budget not settled, waiting for figures from HR
+    - Agreed to move the go-live date to 1 Dec
+    - May will prepare the staff communication plan, due next week</pre>
+                </div>
+                <div class="tool-after">
+                  <p class="tool-tag">Result as an action table</p>
+                  <table>
+                    <thead>
+                      <tr><th scope="col">Action</th><th scope="col">Who</th><th scope="col">When</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Send the Q3 sales report</td><td>Nuch</td><td>This Friday</td></tr>
+                        <tr><td>Prepare the staff communication plan</td><td>May</td><td>Next week</td></tr>
+                        <tr><td>Talk to the vendor about the slow login page</td><td>Ton</td><td>Not stated</td></tr>
+                    </tbody>
+                  </table>
+                  <dl class="tool-extra">
+                      <div><dt>Decisions</dt><dd>Go-live date moved to 1 Dec.</dd></div>
+                      <div><dt>Points to confirm with attendees</dt><dd>The due date for the vendor follow-up, and who owns next year's training budget.</dd></div>
+                  </dl>
+                </div>
               </div>
+              <p class="tool-note">An invented example. Real output depends on the AI you use, and a person should check it before passing it on.</p>
             </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">04</span><span class="sol-head"><span class="sol-title">Recurring reports eat hours every week</span><span class="sol-dept">Finance and planning</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Combines the data, drafts the report and flags unusual figures for the owner to check.</dd></div><div><dt>Measured by</dt><dd>Hours per reporting cycle, and errors found afterwards</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Recurring reports eat hours every week">This sounds like us</a>
-              </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">05</span><span class="sol-head"><span class="sol-title">Meetings end and nothing moves</span><span class="sol-dept">Executives and project teams</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Turns the meeting into tasks with owners and due dates, and records them in the work system.</dd></div><div><dt>Measured by</dt><dd>Share of meeting actions with an owner, and actions done on time</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Meetings end and nothing moves">This sounds like us</a>
-              </div>
-            </details>
-            <details class="sol" name="sol">
-              <summary><span class="sol-num" aria-hidden="true">06</span><span class="sol-head"><span class="sol-title">Documents are checked against rules by hand</span><span class="sol-dept">Compliance and legal</span></span></summary>
-              <div class="sol-body">
-                <dl><div><dt>How AI helps</dt><dd>Compares the document with the requirement list and flags what needs attention for an expert to judge.</dd></div><div><dt>Measured by</dt><dd>Review time per document, and issues caught before approval</dd></div></dl>
-                <a class="sol-link" href="#contact" data-topic="Documents are checked against rules by hand">This sounds like us</a>
-              </div>
-            </details>
+
+            <a class="tool-cta" href="#contact" data-topic="Turn a meeting into action items">Want this across your organization? Talk to us</a>
           </div>
-          <p class="sol-card-note">General examples, not client results. People still review and decide.</p>
         </div>
       </div>
+      <div class="wrap hero-nav" role="group" aria-label="Choose a slide" hidden>
+        <button class="hero-arrow" type="button" data-slide-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="hero-tab" type="button" data-slide-to="0" aria-pressed="true"><span aria-hidden="true">01</span>Overview</button>
+        <button class="hero-tab" type="button" data-slide-to="1" aria-pressed="false"><span aria-hidden="true">02</span>Try the tool</button>
+        <button class="hero-arrow" type="button" data-slide-next aria-label="Next slide"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
     </section>
 
@@ -398,93 +495,6 @@
       </div>
     </section>
 
-    <section id="tool" class="section gray light" aria-labelledby="tool-title">
-      <div class="wrap">
-        <h2 id="tool-title">Try it: <span class="blue">turn meeting notes into action items</span></h2>
-        <p class="section-lead">Tap what you want, then copy the prompt into the AI tool your organization allows. We never see your meeting notes.</p>
-
-        <div class="tool">
-          <div class="tool-controls">
-              <fieldset data-key="format" data-mode="single">
-                <legend>Pick a format</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="table" aria-pressed="true">Action table</button>
-                <button class="chip" type="button" data-value="email" aria-pressed="false">Summary email</button>
-                <button class="chip" type="button" data-value="brief" aria-pressed="false">Executive brief</button>
-                </div>
-              </fieldset>
-              <fieldset data-key="include" data-mode="multi">
-                <legend>Include</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="owner" aria-pressed="true">Who</button>
-                <button class="chip" type="button" data-value="due" aria-pressed="true">When</button>
-                <button class="chip" type="button" data-value="decisions" aria-pressed="true">Decisions</button>
-                <button class="chip" type="button" data-value="open" aria-pressed="false">Open issues</button>
-                </div>
-              </fieldset>
-            <div class="tool-row">
-              <fieldset data-key="language" data-mode="single">
-                <legend>Language</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="th" aria-pressed="false">Thai</button>
-                <button class="chip" type="button" data-value="en" aria-pressed="true">English</button>
-                </div>
-              </fieldset>
-              <fieldset data-key="tone" data-mode="single">
-                <legend>Tone</legend>
-                <div class="chips">
-                <button class="chip" type="button" data-value="formal" aria-pressed="true">Formal</button>
-                <button class="chip" type="button" data-value="brief" aria-pressed="false">Brief</button>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-
-          <div class="tool-output">
-            <p class="tool-output-title">Your prompt</p>
-            <pre id="tool-prompt" tabindex="0" aria-label="Your prompt"></pre>
-            <button class="btn btn-white btn-block" type="button" id="tool-copy">Copy the prompt</button>
-            <p class="tool-status" id="tool-status" role="status"></p>
-            <p class="tool-how">Paste it into the AI tool your organization allows, then swap the bracketed text for your notes.</p>
-          </div>
-        </div>
-
-        <details class="tool-example">
-          <summary>See a before and after example</summary>
-          <div class="tool-example-grid">
-            <div class="tool-before">
-              <p class="tool-tag">Meeting notes</p>
-              <pre>Project team meeting
-- Nuch says the Q3 sales report is not finished, will send it this Friday
-- New system tested, the login page is slow, Ton will talk to the vendor
-- Next year's training budget not settled, waiting for figures from HR
-- Agreed to move the go-live date to 1 Dec
-- May will prepare the staff communication plan, due next week</pre>
-            </div>
-            <div class="tool-after">
-              <p class="tool-tag">Result as an action table</p>
-              <table>
-                <thead>
-                  <tr><th scope="col">Action</th><th scope="col">Who</th><th scope="col">When</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Send the Q3 sales report</td><td>Nuch</td><td>This Friday</td></tr>
-                    <tr><td>Prepare the staff communication plan</td><td>May</td><td>Next week</td></tr>
-                    <tr><td>Talk to the vendor about the slow login page</td><td>Ton</td><td>Not stated</td></tr>
-                </tbody>
-              </table>
-              <dl class="tool-extra">
-                  <div><dt>Decisions</dt><dd>Go-live date moved to 1 Dec.</dd></div>
-                  <div><dt>Points to confirm with attendees</dt><dd>The due date for the vendor follow-up, and who owns next year's training budget.</dd></div>
-              </dl>
-            </div>
-          </div>
-          <p class="tool-note">An invented example. Real output depends on the AI you use, and a person should check it before passing it on.</p>
-        </details>
-
-        <a class="tool-cta" href="#contact" data-topic="Turn a meeting into action items">Want this across your organization? Talk to us</a>
-      </div>
-    </section>
 
     <section id="sample" class="section light">
       <div class="wrap">
@@ -779,10 +789,11 @@
     </div>
   </footer>
 
-  <script src="../config.js?v=20"></script>
-  <script src="../main.js?v=20"></script>
-  <script src="../calc.js?v=20"></script>
-  <script src="../viz.js?v=20"></script>
-  <script src="../prompt-tool.js?v=20"></script>
+  <script src="../config.js?v=21"></script>
+  <script src="../main.js?v=21"></script>
+  <script src="../calc.js?v=21"></script>
+  <script src="../viz.js?v=21"></script>
+  <script src="../prompt-tool.js?v=21"></script>
+  <script src="../slides.js?v=21"></script>
 </body>
 </html>
