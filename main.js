@@ -26,7 +26,7 @@
       extraPick: "แตะเลือกอย่างน้อยหนึ่งข้อก่อนส่ง",
       extraThanks: "ขอบคุณ ได้รับข้อมูลเพิ่มแล้ว",
       services: ["AI Use Case & ROI Sprint", "AI Automation ช่วยงานหลังบ้าน", "Custom Software พัฒนาซอฟต์แวร์เฉพาะทาง", "ยังไม่แน่ใจ ขอคำแนะนำ"],
-      sizes: ["ต่ำกว่า 50 คน", "50-200 คน", "200-2,000 คน", "มากกว่า 2,000 คน"]
+      sizes: ["ต่ำกว่า 500 คน", "500-2,000 คน", "2,000-10,000 คน", "มากกว่า 10,000 คน"]
     },
     en: {
       navOpen: "Open menu",
@@ -49,7 +49,7 @@
       extraPick: "Tap at least one option before sending.",
       extraThanks: "Thank you. We have your details.",
       services: ["AI Use Case & ROI Sprint", "AI Automation for back-office work", "Custom Software development", "Not sure yet, please advise"],
-      sizes: ["Under 50 people", "50-200 people", "200-2,000 people", "Over 2,000 people"]
+      sizes: ["Under 500 people", "500-2,000 people", "2,000-10,000 people", "Over 10,000 people"]
     }
   };
   var t = TEXT[LANG];
